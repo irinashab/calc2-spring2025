@@ -1,16 +1,31 @@
-# Example headings
+---
+title: "Lecture 1: Introduction to Programming"
+date: 2025-01-13
+---
 
-## Sample Section
+# Lecture 1: Introduction to Programming
 
-## This'll be a _Helpful_ Section About the Greek Letter Θ!
-A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
+Welcome to the first lecture on **Introduction to Programming**. In this lecture, we will cover:
 
-## This heading is not unique in the file
+- What is programming?
+- Basics of programming languages
+- Writing your first program
 
-TEXT 1
+## What is Programming?
 
-## This heading is not unique in the file
+Programming is the process of creating a set of instructions that a computer can execute. These instructions form the basis of software that powers everything from smartphones to spacecraft.
 
-TEXT 2
+## Basics of Programming Languages
 
-# Links to the example headings above
+Programming languages are tools that allow us to communicate with computers. Here are a few popular ones:
+- Python
+- Java
+- C++
+- Lua
+
+## Writing Your First Program
+
+Here’s an example of a simple program in Python:
+
+```python
+print("Hello, World!")
