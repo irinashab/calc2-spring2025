@@ -1,6 +1,7 @@
 ---
 title: "Lecture 2: Introduction to Programming"
 date: 2025-01-13
+layout: default
 ---
 
 # Lecture 2: Introduction to Programming
