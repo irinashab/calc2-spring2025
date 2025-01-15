@@ -1,0 +1,11 @@
+body {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333; /* Dark text for readability */
+    font-family: Arial, sans-serif; /* Change font */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #2a7ae2; /* Accent color for headings */
+}
