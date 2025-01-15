@@ -1,9 +1,9 @@
 ---
-title: "Lecture 1: Introduction to Programming"
+title: "Lecture 2: Introduction to Programming"
 date: 2025-01-13
 ---
 
-# Lecture 1: Introduction to Programming
+# Lecture 2: Introduction to Programming
 
 Welcome to the first lecture on **Introduction to Programming**. In this lecture, we will cover:
 
