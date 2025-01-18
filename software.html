@@ -61,7 +61,43 @@ li {
         their work and upload the work to Brightspace. There are several good scanner apps available for Android and iOS devices, my favorite is 
         CamScanner (Android / iOS).</p>
 
-
+<p><h2 id="latex-markup">LaTeX Markup</h2>
+<p>Have you ever wondered how mathematical articles are typed? We do not have symbols on the keyboard for things like exponents, so <span class="math inline">\(x^2\)</span> might not be so easy to write. The letter <span class="math inline">\(\pi\)</span> will certainly not appear on your keyboard, either, and good luck finding the symbol for <span class="math inline">\(\int\)</span>.<br>The answer is called <strong>LaTeX</strong>. LaTeX is a markup language used to typeset academic articles. Academic articles are <strong>not</strong> written in Microsoft Word or Google Docs: while you <em>can</em> get them to understand mathematical equations, it is not standard and somewhat clunky. LaTeX is <strong>the</strong> standard. The pronunciation of Latex as "Latec" is due to the origin of the word. It comes from the Greek word "látex" which is pronounced with a hard "c" sound. As the word entered the English language, the pronunciation was kept consistent with its original form.</p>
+<h2 id="setting-up">Setting up</h2>
+<p>There are several ways to set up and install LaTeX. If you prefer not to install anything on your local computer, you can create a <strong>free</strong> account on <a href="https://www.overleaf.com/" target="_blank" rel="noopener">Overleaf.com</a>. This is the simplest way to get up and running.</p>
+<p>If you prefer to use LaTeX on your own computer, you will need two things:</p>
+<ol>
+<li>
+<p>A LaTeX distribution: either <a href="https://www.tug.org/mactex/" target="_blank" rel="noopener">MacTex</a>, on Mac OS X, or <a href="https://miktex.org/about" target="_blank" rel="noopener">MikTex</a> for Windows.</p>
+</li>
+<li>
+<p>A LaTeX editor: my preference is <a href="https://www.texstudio.org/" target="_blank" rel="noopener">TeXstudio</a>. MikTex and MacTex both come with LaTeX editors, and so you can use those if you like (MikTex comes with TeXworks, MacTex comes with TeXShop), though I prefer TeXstudio.</p>
+</li>
+</ol>
+<p>Once you have written your document in LaTeX, saved as a .tex file, you will be able to compile it to a PDF.</p>
+<h2 id="basic-formatting">Basic Formatting</h2>
+<p>A simple LaTeX file may look something like:</p>
+<p><img src="formatting.png" alt="A simple LaTeX file " title="A simple LaTeX file " data-d2l-editor-default-img-style="true" style="max-width: 100%;"></p>
+<p>It can be overwhelming to start a LaTeX document from scratch, so feel free to use the homework files I post to start. I include several packages, macros,and definitions in my preamble.</p>
+<h2 id="formatting-math">Formatting Math</h2>
+<p>To format math in a LaTeX file, you u<span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">se dollar signs to start and end your mathematical notations. Technically this is referred to as “in-line” math mode: for example, to write the sentence “If </span><span class="math inline" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">\(a \neq 0\)</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">, then </span><span class="math inline" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">\(ax^2 + bx + c\)</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"> is a quadratic polynomial”, you use the following LaTeX syntax:</span></p>
+<p><img src="formatmath_20240826190955605.png" alt="an example of “in-line” math mode" title="an example of “in-line” math mode" data-d2l-editor-default-img-style="true" width="679" height="50" style="max-width: 100%;"></p>
+<p>This is “in-line”, since the math is formatted in the middle of the sentence. There is also “displayed” math mode: you can use two dollar signs ($$) to start and end, and that will display the mathematical content on its own line.</p>
+<p>As you can see, there are certain commands we use to put in mathematical notation. For exponents / superscripts we use the caret symbol ( <span class="math inline">\(\widehat{}\)</span> ) etc. There are many good guides to finding basic LaTeX commands for mathematical notation, you can find them below.</p>
+<h2 id="further-reading">Further reading</h2>
+<p>These first two are essential: you must check these out.</p>
+<ol>
+<li>
+<p><a href="https://guides.nyu.edu/c.php?g=601858&amp;p=4168084" target="_blank" rel="noopener">NYU: Guide to LaTeX</a>. This link is quite thorough and has many other links to other resources to help you get set up. The resources section on the site has lots of good links to finding LaTeX commands and symbols.</p>
+</li>
+<li>
+<p><a href="https://www.cs.princeton.edu/courses/archive/spr10/cos433/Latex/latex-guide.pdf" target="_blank" rel="noopener">David Xiao, “A Beginner’s Guide to LaTeX” (Princeton)</a> This is a short (6 page) description of the basics of LaTeX.</p>
+</li>
+<li>
+<p><a href="https://tobi.oetiker.ch/lshort/lshort.pdf" target="_blank" rel="noopener">The Not So Short Introduction to LaTeX 2e</a>. This 150+ page reference manual describes many of the core functionalities of LaTeX.</p>
+</li>
+</ol>
+<p>You can use your friend Google to ask LaTeX questions or create a free account at <a href="https://tex.stackexchange.com/" target="_blank" rel="noopener">LaTex Stack Exchange</a></p></body></html>
 
 
 
@@ -69,4 +105,4 @@ li {
 
 
     
-  </body>
+
