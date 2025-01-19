@@ -7,7 +7,12 @@ body {
 }
 
 h1 {
-    color: #2F4F4F; /*  color for headings */
+    color: #708090
+
+html
+Copy
+Edit
+; /*  color for headings */
 }
  h2, h3 {
     color: #2F4F4F; /*dark slate gray  color for headings */
