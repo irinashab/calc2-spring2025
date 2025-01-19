@@ -2,18 +2,30 @@ body {
     background-color: #FFF8DC; /* Cornsilk background */
     color: #353839; /* Dark text for readability */
     font-family: Arial, sans-serif; /* Change font */
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
 }
 
 h1 {
-    color: #353839
-
-html
-Copy
-Edit
-; /*  color for headings */
+    color: #353839; /* onyx color for headings */
+    text-align: center;
 }
  h2, h3 {
     color: #2F4F4F; /*dark slate gray  color for headings */
 }
+ 
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
