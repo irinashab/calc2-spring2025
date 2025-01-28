@@ -124,7 +124,7 @@ li {
   <li>Let \(u=g(x)\). Then</li>
   <li>\(h^\prime(x) = f^\prime(g(x)) g^\prime(x)\)</li>
   <li>\(h^\prime(x) = f^\prime(u) u^\prime\)</li>
-  <li>\(h^\prime(x) = f^\prime(u) u^\prime\)</li>
+  <li>\(\int f^\prime(u) \frac{du}{dx} dx\)</li>
    <li>\(\int f^\prime(u) du = f(u) + C\)</li>
 </ul>   
   </p>
@@ -140,4 +140,16 @@ li {
   
 </ul>   
   </p> 
+  <h3>Example</h3>
+  <p>
+Consider \(\int 2x e^{x^2} dx\).<br/>
+What would be an appropriate substitution? <br/>
+    <ul>
+      <li>\(u = x^2\)</li>
+      <li>\(du = 2x dx\)</li>
+      <li>\(\int e^u du = e^u + C = e^{x^2} + C\)</li>
+    </ul>
+    For u: pick a term whose derivative will cancel out.
+  </p>
+  <h3>Excersize</h3>
 </body></html>
