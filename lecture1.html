@@ -128,12 +128,15 @@ li {
    <li>\(\)</li>
 </ul>   
   </p>
+  <h3>Reverse Chain Rule</h3>
+  <p>So let’s do it in reverse!
+    
  <ul>
-  <li>Suppose \(h(x) = f(g(x))\)</li>
-  <li>Let \(u=g(x)\). Then</li>
-  <li>\(h^\prime(x) = f^\prime(g(x)) g^\prime(x)\).</li>
-  <li>Or: \(h^\prime(x) = f^\prime(u) u^\prime\)</li>
-  <li>Or: \(\frac{dh}{dx} = \frac{dh}{du} \frac{du}{dx}\)</li>
+  <li>\(\int f^\prime(g(x)) g^\prime(x) dx\)</li>
+  <li>Let \(u=g(x)\)</li>
+  <li>\(\frac{du}{dx} = g^\prime(x)\).</li>
+  <li>Or: \(\int f^\prime(u) \frac{du}{dx} dx\)</li>
+  <li>Or: \(\int f^\prime(u) du = f(u) + C\)</li>
   
 </ul>   
   </p> 
