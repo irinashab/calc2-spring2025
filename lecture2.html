@@ -121,23 +121,34 @@ li {
  \(hy=1\):
         <iframe src="https://www.desmos.com/calculator/n7gkp43ixo?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
 </p>
-    <p>How might we find the equation of the tangent line at \(x=1\)? The obvious way would be to solve for \(y\)  and then find the derivative of \(\\dfrac{1}{x}\). 
+    <p>How might we find the equation of the tangent line at \(x=1\)? The obvious way would be to solve for \(y\)  and then find the derivative of \(\dfrac{1}{x}\). 
         But we can also differentiate implicitly, meaning “take the derivative of an expression containing  \(y\)”. That is, we can take the derivative of both sides of the equation 
- \(xy=1\), and then use that to figure out what the derivative is when  \(x=1\). The derivative of 
- is, using the product rule, 
-. Since we know that the derivative of 
- is 
-, this simplifies to 
-. The derivative of 
- is 
-, since that’s a constant. So if we take the derivative of both sides, we get:
+ \(xy=1\), and then use that to figure out what the derivative is when  \(x=1\). The derivative of \(xy\) is, using the product rule, \(x^\prime y + y^\prime x\). Since we know that the derivative of 
+\(x\) is \(1\), this simplifies to \( y + y^\prime x\). The derivative of  \(1\) is \(0\), since that’s a constant. So if we take the derivative of both sides, we get:
+
+\[y + y^\prime x=0\]   
+        We can then solve for \(y^\prime\) using algebra: subtract \(y\) from both sides and then divide by \(x\) to get \(y^\prime = -\dfrac{y}{x}\)
+ 
+.
 
 
-
-
-        
     </p>
+<p>
+ In the original equation \(xy=1\), when \(x=1\), we can solve for \(y\) and get \(y=1\) also. So we are looking for the equation of the line tangent to 
+ at the point \((1,1)\). Plug in 
+ and 
+ to 
+ 
+ and we get 
+.
 
+So our tangent line would have the equation 
+, in point-slope form.
+
+Take a look at this video from Khan Academy and look at how to find the derivatives of graphs of a circle.
+
+  
+</p>
 
 
 
