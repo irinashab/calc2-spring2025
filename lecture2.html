@@ -151,14 +151,10 @@ We used implicit differentiation to write an equation to the graph of \(xy=1\) a
   <iframe src="https://www.youtube.com/embed/qb40J4N1fa4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 </div>
  
-<h2>Exponential Functions and Logarithms</h2>
+<h2>Exponential Functions</h2>
 
 <p>An exponential function is a function of the form  \(y=b^x\) where \(b\) is some constant. We exclude \(b \leq 0\), since, for negative numbers, 
- \(b^{\frac{1}{2}}\) is not defined, for example.</p>. 
-<p>A <em>logarithm</em> is the inverse of an exponential function. That is, if \(y=b^x\), then \(x = \log_b(y)\), and vice versa: if we are trying to graph 
-\(y = \log_b(x)\) for some base, we really should think of this as looking for \((x, y)\) values where \(b^y = x\). </p>
-<p>Recall that \(\frac{d}{dx} e^x = e^x\). This means that \(\int e^x dx = e^x + C\).
- </p>
+ \(b^{\frac{1}{2}}\) is not defined, for example.</p>
 <p><strong>Exercises:</strong>
 <ol>
 <li>\(\int\limits_0^{\ln(2)} e^{-x} dx\)</li>
@@ -191,8 +187,14 @@ Moreover, this is not just an academic concern! The function \(f(x) = \frac{e^{-
             <li>\(\int 3^x dx\)</li>
                  
         </ol>
-        
+     Do you see the general pattern?  
     </p>
+    <h2>Logarithms</h2>
+    <p>A <em>logarithm</em> is the inverse of an exponential function. That is, if \(y=b^x\), then \(x = \log_b(y)\), and vice versa: if we are trying to graph 
+\(y = \log_b(x)\) for some base, we really should think of this as looking for \((x, y)\) values where \(b^y = x\). </p>
+<p>Recall that \(\frac{d}{dx} e^x = e^x\). This means that \(\int e^x dx = e^x + C\).
+ </p>
+    <p>To find the derivative of \(y = \ln(x)\), it is easier to reason implicitly using the equation \(e^y = x\). Take the derivative of both sides with respect to \(x\), and we get \(e^y y^\prime = 1\). Then solve for \(y^\prime\) and get \(y^\prime = \dfrac{{1}}{e^y}\). Remember, though, that we used the equation \(e^y = x\), so that means we can substitute \(x\) in for \(e^y\): that is, \(y^\prime = \dfrac{{1}}{{x}}\)! </p>
 </body>
     
 </html>
