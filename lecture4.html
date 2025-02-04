@@ -115,5 +115,24 @@ li {
     </script>
 </head>
 <body>
+    <h1>Integration by Parts</h1>
+    <p>
+        We know that \(\int e^xdx=e^x+C\), we know \(\int xe^{x^2}dx\) can be computed using the substitution \(u=x^2\). What about \(\int xe^xdx\) or \(\int ln(x)dx\)? It looks like we need a new technique.
+Remember the product rule?
+
+\[(gf)^\prime = g^\prime f + gf^\prime\]
+
+We now reverse the product rule:
+\[\int g^\prime(x)f(x) dx + \int g(x) f^\prime(x) dx = g(x) f(x) + C\]
+
+\[\int g(x) f^\prime(x) dx =g(x) f(x) - \int g^\prime(x) f(x) dx + C\]
+ </p>
+<p>Substitute
+<ul>
+    <li>\(u = f(x),du = f^\prime(x) dx\)</li>
+    <li>\(v = g(x), dv = g^\prime(x) dx\)</li>
+</ul>
+</p>
+   
 </body>
 </html>
