@@ -133,6 +133,13 @@ We now reverse the product rule:
     <li>\(v = g(x), dv = g^\prime(x) dx\)</li>
 </ul>
 </p>
-   
+   <p>Then \[\int u dv = uv - \int v du\] This method is called <strong>integration by parts</strong>.</p>
+    <h2>Simple Examples</h2>
+    <p>
+        Compute \(\int xe^{{x}}dx\). If we label the parts of the integrand (the expression inside the integral symbol) \(u=x\) and \(dv=e^xdx\), then we get \(du=dx\) and \(v=\int e^xdx=e^x\).
+According to the formula, \[\int xe^{{x}}dx = xe^x - \int e^xdx=xe^x-e^x+C\] What happens, if we label \(u=e^{{x}}\) and \(dv=xdx\)? Then \(du =e^{{x}}dx\), \(v=\frac{x^2}{{2}}\) and we end up with \(\int xe^{{x}}dx = \frac{ x^2e^x}{{2}} - \int\frac{x^2e^x}{{2}} dx\), a more complex integral than the original.
+
+        
+    </p>
 </body>
 </html>
