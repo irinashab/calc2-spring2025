@@ -133,6 +133,52 @@ li {
         </ul></p>
     <h2>Inverse Trig Functions</h2>
     <p>
+        <p>Before we go through inverse trig integrals, please note this <a href=" https://math.libretexts.org/Bookshelves/Precalculus/Book%3A_Precalculus__An_Investigation_of_Functions_(Lippman_and_Rasmussen)/06%3A_Periodic_Functions/6.03%3A_Inverse_Trigonometric_Functions" target="_blank">reference page</a> on the inverse trig functions.</p>
+    <p> I also added the proof of the identity \[
+\arcsin(x) + \arccos(x) = \frac{\pi}{2}
+\]
+</p>
+<p><ol>
+<li> Let \(\theta = \arcsin(x)\).
+   By definition, \(\theta\) is the angle such that:
+   \[
+   \sin(\theta) = x,
+   \]
+   and \(\theta \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\).
+    </li>
+
+<li>Use the co-function identity:<br/>
+   We know that:
+   \[
+   \cos\left(\frac{\pi}{2} - \theta\right) = \sin(\theta).
+   \]
+   Substituting \(\sin(\theta) = x\):
+   \[
+   \cos\left(\frac{\pi}{2} - \theta\right) = x.
+   \]
+</li>
+<li>   By definition, \(\arccos(x)\) is the angle whose cosine is \(x\). From the above equation:
+   \[
+   \arccos(x) = \frac{\pi}{2} - \theta.
+   \]
+</li>
+<li>
+   Substituting \(\theta = \arcsin(x)\) and \(\arccos(x) = \frac{\pi}{2} - \theta\):
+   \[
+   \arcsin(x) + \arccos(x) = \theta + \left(\frac{\pi}{2} - \theta\right).
+   \]
+   Simplifying:
+   \[
+   \arcsin(x) + \arccos(x) = \frac{\pi}{2}.
+   \]
+</li>
+</ol>
+
+
+
+
+    </p>
+    <p>
 Knowing the derivatives of inverse trig functions can help us know certain antiderivatives. This is tricky: the derivatives of 
         inverse trig functions look nothing like inverse trig functions!      
     </p>
