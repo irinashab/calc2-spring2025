@@ -150,7 +150,30 @@ According to the formula, \[\int xe^{{x}}dx = xe^x - \int e^xdx=xe^x-e^x+C\] Wha
         </ul>
     </p>
     <p>
+        Compute \(\int\ln(x)dx\). At first glance, we can’t integrate by parts, because there aren’t two parts! But note that we can write \(\ln(x)=1 \cdot\ln(x)\),
+        so we can set \(u=\ln(x)\) and \(dv=1\cdot dx=dx\). That inplies \(du=\frac{{dx}}{{x}}\)and \(v=x\).
+        Then \(\int\ln(x)dx=x\ln(x)-\int x\cdot \frac{{1}}{{x}}dx=x\ln(x)-\int dx=x\ln(x)-x+C\)
+    </p>
+    <p>
        Compute \(\int\arctan(x)dx.\) As we did in the previous example, we try \(dv=dx\) and \(u=\arctan(x)\), then \(v=x\) and \(du = \frac{{dx}}{1+x^2}.\) Then \(\int\arctan(x)dx=x\arctan(x)-\int\frac{{xdx}}{1+x^2}\). To compute the latter integral we use \(w\)-substitution, let \(w=1+x^2\). Then \(dw=2xdx\), \(xdx=\frac{{dw}}{{2}}\) and \(\int\frac{{xdx}}{1+x^2}=\frac{{1}}{{2}}\int\frac{{dw}}{{w}}=\frac{{1}}{{2}}\ln(1+x^2)+C.\) Eventually, \(\int\arctan(x)dx=x\arctan(x)=\frac{{1}}{{2}}\ln(1+x^2)+C.\) 
+    </p>
+    <p><strong>Rule of Thumb</strong>
+If the integrand consists of a single term, try \(dv=dx\).</p>
+    <h3><strong>DIY</strong></h3>
+    <p>
+<ol>
+    <li>\(\int x\ln(x) dx\)</li>
+    <li>\(\int \frac{\ln(x)}{x^2} dx\)</li>
+</ol>     
+    </p>
+    <p>
+        <details>
+<summary>Check your answers</summary>
+<ol>
+<li>\(\frac{x^2}{{2}}\ln(x) - \frac{x^2}{{4}} + C\)</li>
+<li>\(-\frac{\ln(x)}{{x}} - \frac{{1}}{{x}} + C\)</li>
+</ol>
+</details>
     </p>
 </body>
 </html>
