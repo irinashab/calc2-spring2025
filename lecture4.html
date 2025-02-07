@@ -175,5 +175,41 @@ If the integrand consists of a single term, try \(dv=dx\).</p>
 </ol>
 </details>
     </p>
-</body>
+
+    <h3>Guidance for choosing \(u\) and \(dv\)</h3>
+    <p>
+        <ul>
+            <li>For \(u\): polynomials, inverse trig functions, logarithms</li>
+            <li>For \(dv\): trig functions (sin/cos), exponential functions</li>
+        </ul>
+    </p>
+    <h2>Multiple Steps</h2>
+    <p>
+        It’s possible that one needs to integrate by parts multiple times. For example, what if we need to compute \(\int x^2 \cos(x) dx\)?
+        We can set \(u = x^2, dv = \cos(x) dx\) and end up with \(\int x^2 \cos(x) dx=x^2 \sin(x) - \int 2x \sin(x) dx\).
+        Then to compute \(\int 2x \sin(x) dx\) we would again need to integrate by parts. So be aware that you may need to continue on several steps!
+        Luckily, the integral we are computing in the second step is simpler than the original integral.
+        Sometimes it seems like we may be going around in circles. Here is an example. Compute \(\int e^x \cos(x) dx\).
+    </p>
+    <p>
+        Compute \(\int e^x \cos(x) dx\).
+There is no obvious \(u\) here. Remember: for \(u\), we want a term so that \(du\) is simpler. But whether we choose \(u=e^x\) or \(u=\cos(x)\), 
+        we end up with a similarly complex problem. So what should we do? Just pick one. Let \(u=e^x\) or \(dv=\cos(x)dx\),
+        then \(du=e^xdx\) and \(v=\sin(x)\), and our integral is \[\int e^x \cos(x) dx = e^x \sin(x) - \int e^x \sin(x) dx\] 
+        Now let’s integrate by parts \(\int e^x \sin(x) dx\), i.e. set \(u=e^x\) , and \(dv = \sin(x) dx\). Then \(du=e^xdx\), and \(v=-\cos(x)\). So now \[\int e^x \cos(x) dx=e^x \sin(x) - (e^x(-\cos(x)) - \int (e^x)(-\cos(x)) dx)\] Distributing negatives, we get \[\int e^x \cos(x) dx=e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx\] 
+        But now we are back to square one: the original problem was to compute \(\int e^x \cos(x) dx\)!
+    </p>
+    <p>
+        So what do we do? Take a second to look at everything we have done. We know that the integral \(\int e^x \cos(x) dx\) is equal to:\[e^x \sin(x) + e^x \cos(x) - \int e^x \cos(x) dx\] 
+        The fact that \(\int e^x \cos(x) dx\) is on both sides makes it appear that we did something wrong.
+        But actually, we can use algebra to solve this problem: add \(\int e^x \cos(x) dx\) to both sides, 
+        then: \[2 \int e^x \cos(x) dx = e^x \sin(x) + e^x \cos(x)\] Or \[\int e^x \cos(x) dx = \frac{e^x \sin(x) + e^x\cos(x)}{{2}} + C\] 
+Exercise: Compute \(\int e^x \sin(x) dx\).
+    </p>
+    <p><strong>Keep practicing! Technique comes with practice and luck is useful too!</strong></p>
+    <p>
+    <strong> Exercise:</strong><br/>
+        Compute \(\int e^x \sin(x) dx\).
+    </p>
+    </body>
 </html>
