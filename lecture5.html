@@ -116,6 +116,18 @@ li {
 </head>
 <body>
   <h1>Trigonometric Integrals</h1>
-  <p>Before we go through trig integrals, please note this <a href+"https://divisbyzero.com/2021/02/09/essential-trigonometry-for-calculus/" target="_blank">reference page</a>  on trig formulas, identities, and the unit circle. I will be referencing a few of the formulas/identities here as we need them. In particular, we will first need the Pythagorean identity: \[\sin^2(x) + \cos^2(x) = 1\]</p>
+  <p>Before we go through trig integrals, please note this <a href+"https://divisbyzero.com/2021/02/09/essential-trigonometry-for-calculus/" target="_blank">reference page</a>  on trig formulas, identities, and the unit circle. 
+      I will be referencing a few of the formulas/identities here as we need them. In particular, we will first need the Pythagorean identity: \[\sin^2(x) + \cos^2(x) = 1\]</p>
+    <h2>Odd Powers</h2>
+    <p>
+        Let’s do some examples here. Consider \(\int \cos^3(x) \sin^2(x) dx\). In this case, we can rewrite \(\cos^3(x)\) as \(\cos(x)\cdot\cos^2(x)\). Then use the fact that \(\sin^2(x) + \cos^2(x) = 1\) to rewrite \(cos^2(x)\) as \(1-\sin^2(x)\). That is, our integral is now: \[\int \cos(x) \cdot (1 - \sin^2(x))\sin^2(x) dx\] 
+        Now we are on familiar turf, we can set \(u=\sin(x)\). Then \(du=\cos(x)dx\), and we can simplify our integral to: \[\int (1 - u^2)u^2 du\]
+    </p>
+    <p>
+        Or: \[\int u^2 - u^4 du\] Then we integrate using the power rule: \(\frac{u^3}{{3}} - \frac{u^5}{{5}} + C\). 
+        Substitute back, and our general antiderivative is \(\frac{\sin^3(x)}{{3}} - \frac{\sin^5(x)}{{5}} + C\).
+    </p>
+    <p> <strong>Strategy:</strong>If we see an odd power of \(\sin(x)\) or \(\cos(x)\), pull one factor out, and re-write using \(\sin^2(x) = 1 - \cos^2(x)\) or \(\cos^2(x) = 1 - \sin^2(x)\). Then use integration by substitution, with either \(u=\sin(x)\) or \(u=\cos(x)\).
+    </p>
 </body>
 </html>
