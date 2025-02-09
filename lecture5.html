@@ -144,9 +144,29 @@ li {
 <li>\(\sin(x) - \frac{\sin^3(x)}{{3}} + C\)</li>
 <li>\(\frac{\cos^3(x)}{{3}} - \cos(x) + C\)</li>
     <li>\(\frac{\sin^4(x)}{{4}}+C\)  Note that there is more than one acceptable answer here. Why might that be? The \(+C\) is doing some work here. Take a look at <a hreth="https://www.desmos.com/calculator/bc3nmyp10q">this graph</a>, and recall that two functions that differ by a constant have the same derivative.</li>
-    <li>\(\frac{\sin^7(x)}{{7}} - \frac{2\sin^5(x)}{{5}} + \frac{\sin^3(x)}{{3}} + C\)/li>
+    <li>\(\frac{\sin^7(x)}{{7}} - \frac{2\sin^5(x)}{{5}} + \frac{\sin^3(x)}{{3}} + C\)</li>
 </ol>
 </details>
   <h2>Even Powers</h2>
+    <p>
+        If the powers of both \(\sin(x)\) and \(\cos(x)\) are even, then we have to find another trick. Here we recall the double angle formulas for cosine
+        (there are three of them):
+        <ul>
+            <li>\(\cos(2x) = \cos^2(x) - \sin^2(x)\)</li>
+            <li>\(\cos(2x) = 2 \cos^2(x) - 1\)</li>
+            <li>\(\cos(2x) = 1 - 2 \sin^2(x)\)</li>
+        </ul>
+    </p>
+    <p>
+        We will actually use the last two of these. Moreover, we’ll be using them in reverse. That is, we’re going to try to convert
+        \(\cos^2(x)\) and \(\sin^2(x)\) into expressions involving \(\cos(2x)\). To do this, we do some algebra, and compute:
+<ul>
+    <li>\(\cos^2(x) = \frac{{1}}{{2}} + \frac{{1}}{{2}}\cos(2x)\)</li>
+    <li>\(\sin^2(x) = \frac{{1}}{{2}} - \frac{{1}}{{2}}\cos(2x)\)</li>
+</ul>
+</p>
+    <p>
+        Here’s an example. Suppose we want to compute \(\int \cos^2(x) dx\). We use the formula above to convert everything this into \(\int( \frac{{1}}{{2}} + \frac{{1}}{{2}}\cos(2x)) dx\). Now integrate (use substitution with \(u=2x\) if you need to) and the general antiderivative is \(\frac{{x}}{{2}} + \frac{{1}}{{4}} \sin(2x) + C\) Another example: \(\int \cos^2(x) \sin^2(x) dx\). Here we need to use both formulas. Try this out yourself, the answer you should get is \(\frac{{x}}{{8}} - \frac{\sin(4x)}{{32}} + C\). This is a challenging problem, you may need to go through this multiple times.
+    </p>
 </body>
 </html>
