@@ -129,5 +129,24 @@ li {
     </p>
     <p> <strong>Strategy:</strong>If we see an odd power of \(\sin(x)\) or \(\cos(x)\), pull one factor out, and re-write using \(\sin^2(x) = 1 - \cos^2(x)\) or \(\cos^2(x) = 1 - \sin^2(x)\). Then use integration by substitution, with either \(u=\sin(x)\) or \(u=\cos(x)\).
     </p>
+    <p>
+       <strong>Exercise:</strong>  Use this strategy on the following examples:
+        <ol>
+            <li>\(\int \cos^3(x) dx\)</li>
+            <li></li>\(\int \sin^3(x) dx\)
+            <li>\(\int \sin^3(x) \cos(x) dx\)</li>
+            <li>\(\int \cos^5(x) \sin^2(x) dx\)</li>
+        </ol>
+    </p>
+       <details>
+<summary>Check your answers</summary>
+<ol>
+<li>\(\sin(x) - \frac{\sin^3(x)}{{3}} + C\)</li>
+<li>\(\frac{\cos^3(x)}{{3}} - \cos(x) + C\)</li>
+    <li>\(\frac{\sin^4(x)}{{4}}+C\) Note that there is more than one acceptable answer here. Why might that be? The \(+C\) is doing some work here. Take a look at <a hreth="https://www.desmos.com/calculator/bc3nmyp10q">this graph</a>, and recall that two functions that differ by a constant have the same derivative.</li>
+    <li>\(\frac{\sin^7(x)}{{7}} - \frac{2\sin^5(x)}{{5}} + \frac{\sin^3(x)}{{3}} + C\)/li>
+</ol>
+</details>
+  
 </body>
 </html>
