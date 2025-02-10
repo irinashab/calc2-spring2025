@@ -166,7 +166,51 @@ li {
 </ul>
 </p>
     <p>
-        Here’s an example. Suppose we want to compute \(\int \cos^2(x) dx\). We use the formula above to convert everything this into \(\int( \frac{{1}}{{2}} + \frac{{1}}{{2}}\cos(2x)) dx\). Now integrate (use substitution with \(u=2x\) if you need to) and the general antiderivative is \(\frac{{x}}{{2}} + \frac{{1}}{{4}} \sin(2x) + C\) Another example: \(\int \cos^2(x) \sin^2(x) dx\). Here we need to use both formulas. Try this out yourself, the answer you should get is \(\frac{{x}}{{8}} - \frac{\sin(4x)}{{32}} + C\). This is a challenging problem, you may need to go through this multiple times.
+        Here’s an example. Suppose we want to compute \(\int \cos^2(x) dx\). We use the formula above to convert everything this into
+        \(\int( \frac{{1}}{{2}} + \frac{{1}}{{2}}\cos(2x)) dx\). Now integrate (use substitution with \(u=2x\) if you need to) and 
+        the general antiderivative is \(\frac{{x}}{{2}} + \frac{{1}}{{4}} \sin(2x) + C\). Another example: \(\int \cos^2(x) \sin^2(x) dx\). Here we need to use both formulas. Try this out yourself, the answer you should get is \(\frac{{x}}{{8}} - \frac{\sin(4x)}{{32}} + C\). This is a challenging problem, you may need to go through this multiple times.
+    </p>
+    <p>
+    <strong>Exercise:</strong> Use this strategy on the following examples:
+        <ol>
+            <li>\(\int\limits_{-\pi}^{\pi} \cos^3(x) dx\)</li>
+             <li>\(\int \cos^4(x) dx\)</li>
+             <li>\(\int \cos(x) \sin^2(x) dx\)</li>
+        </ol>
+    </p>
+          <details>
+<summary>Check your answers</summary>
+<ol>
+<li>\(0\)</li>
+<li>\(\frac{{3x}}{{8}}+\frac{\sin(2x)}{{4}}+\frac{\sin(4x)}{{32}}+C\)</li>
+    <li>\(\frac{\sin^3(x)}{{3}} + C\)</li>
+</ol>
+</details>
+
+    <h2>Different angles</h2>
+<p>
+ As before, I will remind you of some of the trig identities that we may need before we use them here:
+    <ul>
+        <li>\(\cos(a+b) = \cos(a) \cos(b) - \sin(a) \sin(b)\)</li>
+        <li>\(\cos(a - b) = \cos(a) \cos(b) + \sin(a) \sin(b)\)</li>
+        <li>\(\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)\)</li>
+        <li>\(\sin(a - b) = \sin(a) \cos(b) - \cos(a) \sin(b)\)</li>
+    </ul>
+</p>
+    <p>We will use these to help compute integrals of the form \(\int \sin(ax) \cos(bx) dx\), \(\int \cos(ax) \cos(bx) dx\),
+        and \(\int \sin(ax) \sin(bx) dx\). For example, how do we compute \(\int \sin(5x) \cos(2x) dx\)? 
+        We re-write \(\sin(ax) \cos(bx)\) using the formulas above. Since \(\sin(5x + 2x) = \sin(5x) \cos(2x) + \cos(5x)\sin(2x)\)
+        and \(\sin(5x - 2x) = \sin(5x) \cos(2x) - \cos(5x) \sin(2x)\) , if we add these together, 
+        we get that \(\sin(7x) + \sin(3x) = 2\sin(5x) \cos(2x)\). In other words, \(\sin(5x) \cos(2x) = \frac{\sin(7x) + \sin(3x)}{{2}}\). 
+        More generally, we can use the following formulas:
+    <ul>
+        <li>\(\sin(ax)\cos(bx) = \frac{\sin(ax - bx) + \sin(ax + bx)}{{2}}\)</li>
+        <li>\(\cos(ax)\cos(bx) = \frac{\cos(ax - bx) + \cos(ax + bx)}{{2}}\)</li>
+        <li>\(\sin(ax)\sin(bx) = \frac{\cos(ax - bx) - \cos(ax + bx)}{{2}}\)</li>
+    </ul>
+    </p>
+    <p>
+        Let’s do an example: \(\int\limits_0^{\pi/2} \sin(3x)\cos(2x) dx\). Using the first formula, we re-write \(\sin(3x) \cos(2x)\) as \(\frac{\sin(x) + \sin(5x)}{{2}}\), and so we are looking for \(\frac{{1}}{{2}}\int\limits_0^{\pi/2} (\sin(x) + \sin(5x))dx\), which is \(\left.\frac{{1}}{{2}}(-\cos(x) - \frac{\cos(5x)}{{5}})\right|_0^{\pi/2}\). Plugging in, we get \(\frac{{1}}{{2}}(-\cos(\pi/2) - \frac{\cos(5\pi/2)}{{5}}) - \frac{{1}}{{2}}(-\cos(0) - \frac{\cos(0)}{{5}})\), which is \(0 - \frac{{1}}{{2}}(-1 - \frac{{1}}{{5}})\), or just \(\frac{{3}}{{5}}\).
     </p>
 </body>
 </html>
