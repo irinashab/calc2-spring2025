@@ -171,5 +171,17 @@ So the question becomes: how do we go from \(\frac{{1}}{x^2 - 1}\) to \(\frac{1/
             <li>\(\frac{{1}}{{4}} \ln|x-5| - \frac{{1}}{{4}} \ln|x-1| + C\)</li>
         </ul>
     </p>
+    <h3>More General Example</h3>
+    <p>
+        \[\frac{{1}}{(x+1)(x+2)(x+3)} = \frac{{A}}{x+1} + \frac{{B}}{x+2} + \frac{{C}}{x+3}\]
+        <ul>
+            <li>\(x=-1\): \(A(x+2)(x+3) = 1\) means \(A = \frac{{1}}{{2}}\)</li>
+             <li>\(x=-2\): \(B(x+1)(x+3) = 1\) means \(B=-1\)</li>
+             <li>\(x=-3\): \(C(x+1)(x+2) = 1\) means \(C = \frac{{1}}{{2}}\)</li>
+        </ul>
+    Then we can just integrate:<br/>
+    \(\frac{{1}}{{2}}\int \frac{{dx}}{x+1} - \int \frac{{dx}}{x+2} + \frac{{1}}{{2}} \int \frac{{dx}}{x+3}\)<br/>
+    Final answer: \(\frac{{1}}{{2}}\ln|x+1| - \ln|x+2| + \frac{{1}}{{2}}\ln|x+3| + C\)
+    </p>
 </body>
 </html>
