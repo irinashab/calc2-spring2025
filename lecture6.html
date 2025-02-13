@@ -197,6 +197,11 @@ So the question becomes: how do we go from \(\frac{{1}}{x^2 - 1}\) to \(\frac{1/
     <p>Then the center of mass of this system can similarly be found by adding up the moments of each object, and dividing by the total mass. But in two dimensions, we have to look at the moments of each object with respect to each axis.
 The moment of an object with respect to the \(x\)-axis, \(M_x\), is its mass multiplied by the \(y\)-value of its position. The moment with respect to the \(y\)-axis is the mass multiplied by the \(x\)-value of the position. We add up each individual moment to get the moments of the system. We add up the individual masses to get the mass of the system, \(m\). The center of mass is located at position \((\frac{M_y}{{m}}, \frac{M_x}{{m}})\).
 In other words, the center of mass is located at \((\frac{m_1x_1 + m_2 x_2}{m_1 + m_2}, \frac{m_1y_1 + m_2 y_2}{m_1 + m_2})\), which is similarly a kind of weighted average.</p>
-    
+    <h3>Center of Mass, Continuous Region</h3>
+    <p>Now we assume that the masses of our objects are distributed continuously throughout a region. For some regions, it is not challenging to find its center of mass: if the region is a rectangle of uniform density \(\rho\), its center of mass is at the actual center of the rectangle.</p>
+ <p><img src="assets/images/cmrect.png" alt="center of mass of a rectangle of const density" title="center of mass of a rectangle" width="300"></p>
+    For more complicated regions, we can approximate the region with rectangles as we do for areas. We still need to assume the region has uniform density, \(\rho\). We find the centers of mass of each of those rectangles, and use those to compute the center of mass for the region as a whole. In other words, we can assume that the entirety of the mass of each rectangle lies at its center (this is actually the entire point of the concept: the center of mass of an object is the point at which we can assume all of its mass is concentrated on, for the purposes of more complicated calculations.)
+<h3>Derivation</h3>
+    <p>Then we use the same idea above: use the moments and masses of each rectangle to compute \(M_x, M_y\),and \(m\), and then the center of mass is located at \((\frac{M_y}{{m}}, \frac{M_x}{{m}})\). The computation is as follows:</p>
 </body>
 </html>
