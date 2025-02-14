@@ -212,7 +212,7 @@ M_y &= \frac{x_i + x_{i+1}}{2} m
 \]
  To simplify matters, we will assume that \(x_i\) and \(x_{i+1}\) are very close (as they will get closer to each other as \(n \rightarrow \infty\)). So \(M_y = x_i m\). Replacing \(m\) with \(\rho f(x_i) \Delta x\) in each of the above formulas, we have: \[\begin{align} M_x &amp;= \frac{\rho}{2} (f(x_i))^2 \Delta x \\ M_y &amp;= \rho x_i f(x_i) \Delta x \end{align}\]</p>
 <p>We add up each of these moments to get the (approximation of the) moments of the entire region: \[\begin{align} M_x &amp;= \sum_{i=1}^n \frac{\rho}{{2}} (f(x_i))^2 \Delta x \\ M_y &amp;= \sum_{i=1}^n \rho x_i f(x_i) \Delta x \end{align}\] As \(n \rightarrow \infty\), these sums become integrals, and we get our exact formulas for the moments of the curve:
-[\begin{align} M_x &amp;= \frac{\rho}{{2}} \int_a^b f(x)^2 dx \\ M_y &amp;= \rho \int_a^b x f(x) dx \end{align}\]
+\[\begin{align} M_x &amp;= \frac{\rho}{{2}} \int_a^b f(x)^2 dx \\ M_y &amp;= \rho \int_a^b x f(x) dx \end{align}\]
     </p>
     <p>The mass of the region can be found by similarly adding up the masses of each rectangle (\(\rho f(x_i) \Delta x\) ), and taking the limit as \(n \rightarrow \infty\). We end up with:
     \[m = \rho \int_a^b f(x) dx\] Our center of mass can be found using these formulas, at the coordinate \((\frac{M_y}{{m}}, \frac{M_x}{{m}})\). Notice that the density constant \(\rho\) will cancel out, so we can effectively ignore it (or just assume that it’s equal to 1).</p>
