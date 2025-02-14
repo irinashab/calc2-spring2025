@@ -219,6 +219,60 @@ M_y &= \frac{x_i + x_{i+1}}{2} m
 <h3>Example</h3>
 <p>Let’s use these formulas to find the center of mass of the region bounded by \(f(x)=sin(x)\), with \(0 \leq x \leq \pi\).</p>
      <p><img src="assets/images/sinx.png" alt="sine-shaped mass" title="sine-shaped mass" width="300" height="217"></p>
+    <p>First, let’s compute the mass (assuming \(\rho = 1\)):
+
+\[
+m = \int_0^\pi \sin(x) \,dx = \left.-\cos(x)\right|_0^\pi
+\]
+
+Plugging in the endpoints, the mass is:
+
+\[
+-\cos(\pi) + \cos(0) = 2
+\]
+
+Now we compute \(M_x\):
+
+\[
+M_x = \frac{1}{2} \int_0^\pi \sin^2(x) \,dx
+\]
+
+Using what we learned in Lesson 5, we replace \(\sin^2(x)\) with 
+
+\[
+\frac{1}{2} - \frac{1}{2} \cos(2x):
+\]
+
+\[
+M_x = \frac{1}{2} \int_0^\pi \left(\frac{1}{2} - \frac{1}{2} \cos(2x)\right) dx
+\]
+
+Evaluating the integral:
+
+\[
+M_x = \left( \frac{x}{4} - \frac{\sin(2x)}{8} \right) \Bigg|_0^\pi
+\]
+
+Plugging in the endpoints:
+
+\[
+M_x = \left(\frac{\pi}{4} - \frac{\sin(2\pi)}{8} \right) - \left(0 - \frac{\sin(0)}{8} \right)
+\]
+
+Since \(\sin(2\pi) = 0\) and \(\sin(0) = 0\), we get:
+
+\[
+M_x = \frac{\pi}{4}
+\]
+
+Now we compute \(M_y\):
+
+\[
+M_y = \int_0^\pi x \sin(x) \,dx
+\]
+
+We use integration by parts for this problem. Since \(\sin(x)\) is easy to integrate, and its integral does not increase the complexity of the problem, we let:
+</p>
 
 </body>
 </html>
