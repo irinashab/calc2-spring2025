@@ -272,7 +272,35 @@ M_y = \int_0^\pi x \sin(x) \,dx
 \]
 
 We use integration by parts for this problem. Since \(\sin(x)\) is easy to integrate, and its integral does not increase the complexity of the problem, we let:
+        <ul>
+            <li>\(u=x \Rightarrow du=dx\)</li>
+            <li>\(dv=\sin(x)\Rightarrow v=-\cos(x)\)</li>
+        </ul>
 </p>
-
+    <p>
+        We compute the general antiderivative: \[\begin{{align}} &amp;-x\cos(x) - \int -(\cos(x)) dx \\ = &amp;-x \cos(x) + \int \cos(x) dx \end{{align}}\] Computing one more integral, our \(M_y\) is \(\left.(-x\cos(x) + \sin(x))\right|_0^\pi\). Plug in the endpoints: \[(-\pi \cos(\pi) + \sin(\pi)) - (-0\cos(0) + \sin(0))\] Which is just \(\pi\). To recap, we have:
+        <ul>
+            <li>\(m=2\)</li>
+            <li>\(M_x=\frac{\pi}{{4}}\)</li>
+            <li>\(M_y=\pi\)</li>
+        </ul>
+    </p>
+<p>
+    So our center of mass \((\frac{M_y}{{m}}, \frac{M_x}{{m}})\) is( \(\frac{\pi}{{2}}, \frac{\pi}{{8}})\). Here is the region with the center of mass plotted:
+</p>
+      <p><img src="assets/images/sinxcm.png" alt="center of mass of sine-shaped mass" title="center of mass of sine-shaped mass" width="300" height="217"></p>
+ <p>  As an exercise, find the centers of mass of the following regions, assuming a uniform density:
+     <ol>
+         <li>The region bounded by \(y = 4 - x^2\) and the \(x-\)axis, with \(-2 \leq x \leq 2\)</li>
+         <li>The region bounded by \(y =\cos(x)\) and the \(x-\)axis, with \(0 \leq x \leq \frac{\pi}{{2}}\)</li>
+     </ol>
+</p>
+     <details>
+<summary>Check your answers</summary>
+<ol>
+<li>\((0, \frac{{8}}{{5}})\)</li>
+<li>\((\frac{\pi}{{2}} - 1, \frac{\pi}{{8}})\)</li>
+</ol>
+</details>
 </body>
 </html>
