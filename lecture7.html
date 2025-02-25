@@ -161,7 +161,11 @@ How would we find if the integral \(\displaystyle \int_0^{\infty} (e^{-x} + 1)\,
     \(\displaystyle \int_0^4 \frac{{1}}{\sqrt{4-x}}\,dx\) - any ideas?
     <iframe src="https://www.desmos.com/calculator/9eqmf75htq?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
     <p><strong>Solution</strong>: setup a limit \[\lim\limits_{b \rightarrow 4^-} \int\limits_0^b \frac{{1}}{\sqrt{4-x}}dx\] Re-write the integrand as \((4-x)^{-\frac{{1}}{{2}}}\), and use the power rule: \[\lim\limits_{b \rightarrow 4^-}\displaystyle \int\limits_0^b(4-x)^{-1/2}\,dx =\lim\limits_{b\rightarrow 4^-}-2(4-x)^{1/2}\Big|_0^b\]
-        
     </p>
+    <p>Continuing:\(\lim\limits_{b\rightarrow 4^-}\big( -2(4-b)^{1/2} + 2(4)^{1/2}\big) = \lim\limits_{b\rightarrow 4^-} \big(-2(4-b)^{1/2} + 4\big)\)
+As \(b \rightarrow 4^{-}\), what happens to \((4-b)^{1/2}\)? It approaches 0! So the limit is just 4!<br/>
+<strong>Question</strong>: why is it important here that we approached 4 from the left?<br/>
+
+<strong>Exercise</strong>: \[\displaystyle\int_0^2 x \ln(x)\,dx\] (Where is the discontinuity here?)</p>
 </body>
 </html>
