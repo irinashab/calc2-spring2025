@@ -159,7 +159,7 @@ How would we find if the integral \(\displaystyle \int_0^{\infty} (e^{-x} + 1)\,
     </p>
     <h3>Discontinuities</h3>
     \(\displaystyle \int_0^4 \frac{{1}}{\sqrt{4-x}}\,dx\) - any ideas?
-    <iframe src="https://www.desmos.com/calculator/9eqmf75htq?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+   <p> <iframe src="https://www.desmos.com/calculator/9eqmf75htq?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
     <p><strong>Solution</strong>: setup a limit \[\lim\limits_{b \rightarrow 4^-} \int\limits_0^b \frac{{1}}{\sqrt{4-x}}dx\] Re-write the integrand as \((4-x)^{-\frac{{1}}{{2}}}\), and use the power rule: \[\lim\limits_{b \rightarrow 4^-}\displaystyle \int\limits_0^b(4-x)^{-1/2}\,dx =\lim\limits_{b\rightarrow 4^-}-2(4-x)^{1/2}\Big|_0^b\]
     </p>
     <p>Continuing:\(\lim\limits_{b\rightarrow 4^-}\big( -2(4-b)^{1/2} + 2(4)^{1/2}\big) = \lim\limits_{b\rightarrow 4^-} \big(-2(4-b)^{1/2} + 4\big)\)
@@ -167,5 +167,14 @@ As \(b \rightarrow 4^{-}\), what happens to \((4-b)^{1/2}\)? It approaches 0! So
 <strong>Question</strong>: why is it important here that we approached 4 from the left?<br/>
 
 <strong>Exercise</strong>: \[\displaystyle\int_0^2 x \ln(x)\,dx\] (Where is the discontinuity here?)</p>
+    <h3>Middle of Interval</h3>
+    <p>\(\displaystyle\int_{-1}^1 \frac{{1}}{x^2}\,dx\) -ideas?</p>
+    <p><iframe src="https://www.desmos.com/calculator/op1jszf1tu?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+    <p>
+     <strong>Idea</strong>: Split into 2 integrals. \[\displaystyle\int_{-1}^1 \frac{{1}}{x^2}\,dx= \begin{{align}} &amp;\lim_{b\rightarrow 0^-} \int_{-1}^b \frac{{1}}{x^2} dx &amp;+ \lim_{a \rightarrow 0^+} \int \frac{{1}}{x^2} dx \\ &amp;= \lim_{b\rightarrow 0^-} \left. (-\frac{{1}}{{x}}) \right|_{-1}^b &amp;+ \lim_{a \rightarrow 0^+} \left.(-\frac{{1}}{{x}})\right|_a^1 \\ &amp;= \ \lim_{b \rightarrow 0^-} 1 - \frac{{1}}{{b}} &amp;+ \lim_{a \rightarrow 0^+} -1 + \frac{{1}}{{a}} \end{{align}}\] Both integrals diverge.
+    </p>
+    <h3>Multiple Discontinues?</h3>
+    <p>What should we do if we have multiple discontinuities?</p>
+    <p><iframe src="https://www.desmos.com/calculator/imjwo32bru?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
 </body>
 </html>
