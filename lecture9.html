@@ -115,14 +115,70 @@ li {
     </script>
 </head>
 <body>
-    <h1>Volumes</h1>
-    <p>General strategy:
-    <ul>
-        <li>Take thin slices of 3D figure</li>
-         <li>Find formula for \(A(x)\), the area of one cross-section</li>
-         <li>\(V = \int_a^b A(x) dx\)</li>
-    </ul>
-    
-    </p>
+   <header id="title-block-header">
+<h1 class="title">Volumes by Slicing</h1>
+</header>
+<h2 id="preview">Preview</h2>
+<p>Our next geometric application of integration will be to find volumes of three-dimensional figures. Recall how we computed areas using integrals: first we approximate the area of the region with rectangles, then take more and more rectangles and, in the limit, we end up with an integral.</p>
+<p>Similarly, we can approximate the volume of a three dimensional figure with thin slices of the figure, each of whose volume is <span class="math inline">\(A \cdot \Delta x\)</span> where <span class="math inline">\(A\)</span> is the area of one side of the thin slice, and <span class="math inline">\(\Delta x\)</span> is the thickness of that slice.</p>
+<p><img src="thinslice.png" alt="image" /></p>
+<p><br />
+Adding up the volumes, you get a Riemann sum:<span class="math display">\[V \approx \sum_{i=1}^{n} A(x_i) \Delta x\]</span> As <span class="math inline">\(n \rightarrow \infty\)</span>, this becomes an integral: <span class="math inline">\(\displaystyle \int_{a}^{b}{A(x)) \, dx}\)</span>, where <span class="math inline">\(A(x)\)</span> is the area of the “slice” at <span class="math inline">\(x\)</span>.<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+</p>
+<h2 id="volume-of-a-pyramid">Volume of a Pyramid</h2>
+<p><img src="pyramid.png" alt="image" /></p>
+<p>We know from geometry that the formula for the volume of a pyramid is <span class="math inline">\(V=\frac{1}{3}Ah\)</span>. If the pyramid has a square base, this becomes <span class="math inline">\(V=\frac{1}{3}a^{2}h\)</span>, where <span class="math inline">\(a\)</span> denotes the length of the side of the base. We are going to use the slicing method to derive this formula. We put the top of the pyramid at the origin with it’s heigth along the <span class="math inline">\(x\)</span>-axis. The question is what is the area of an <span class="math inline">\(x\)</span>-th slice?</p>
+<p><img src="rectpyramid.png" alt="image" /></p>
+<p><br />
+The base of the piramid is a square with the area <span class="math inline">\(a^2\)</span>. If we move left along the <span class="math inline">\(x\)</span>-axis, we will be getting the slices smaller and smaller. To figure out the area of a crossesction as a function of <span class="math inline">\(x\)</span> lets take a "side view" of the pyramid. From the side view we will see a two-dimensional triangle:</p>
+<p><img src="calccrossection.png" alt="image" /></p>
+<p>Since there are two similar triangles, we have a proportion: <span class="math inline">\(\frac{s}{a}=\frac{x}{h}\)</span> or <span class="math inline">\(s=\frac{ax}{h}\)</span>. Therefore, the area of one of the cross-sectional squares is <span class="math inline">\(A(x)=s^2=\frac{a^2x^2}{h^2}\)</span>. Then we find the volume of the pyramid by integrating from <span class="math inline">\(0\)</span> to <span class="math inline">\(h\)</span>: <span class="math display">\[\begin{aligned}
+ % &lt;-- observe: &#39;flalign*&#39;, not &#39;align*&#39;
+V   &amp; = \displaystyle \int_{0}^{h}{A(x)  dx} &amp; \\
+    &amp; = \displaystyle \int_{0}^{h}{\frac{a^2x^2}{h^2} \, dx}=\frac{a^2}{h^2}\displaystyle \int_{0}^{h}{{x^2}  dx}&amp; \\
+    &amp; = \frac{a^2}{h^2}\frac{x^3}{3}\Big|_0^h=\frac{1}{3}a^2h&amp;\end{aligned}\]</span> This is the formula we were looking for.</p>
+<h2 id="problem-solving-strategy">Problem-Solving Strategy</h2>
+<p>To find a volume of a solid by the slicing method do the following steps:</p>
+<ol>
+<li><p>Take thin slices of 3D figure</p></li>
+<li><p>Find formula for <span class="math inline">\(A(x)\)</span>, the area of one cross-section</p></li>
+<li><p><span class="math inline">\(V = \displaystyle\int_a^b A(x) dx\)</span></p></li>
+</ol>
+<h2 id="examples">Examples</h2>
+<h3 id="slicing-a-sphere">Slicing a Sphere</h3>
+<p><strong>Problem</strong>:Derive the formula for the volume of a sphere of radius <span class="math inline">\(R\)</span> (<span class="math inline">\(R\)</span> is a fixed constant).</p>
+<p><img src="sphere.png" alt="image" /></p>
+<ul>
+<li><p>What is the formula for the area of the “slice” that’s <span class="math inline">\(x\)</span>-units from the origin?</p></li>
+<li><p><span class="math inline">\(A = \pi(R^2 - x^2)\)</span></p></li>
+<li><p>Multiply that area by a small “thickness” <span class="math inline">\(\Delta x\)</span>: <span class="math inline">\(\pi (R^2 - x^2) \Delta x\)</span></p></li>
+<li><p>Add all of these up and take the limit as <span class="math inline">\(\Delta x\)</span> goes to <span class="math inline">\(0\)</span></p></li>
+</ul>
+<p>The formula we get is <span class="math inline">\(V = \displaystyle\int_0^R \pi (R^2 - x^2)\,dx\)</span>. Evaluate this integral?</p>
+<h3 id="slicing-a-cone">Slicing a Cone</h3>
+<p><strong>Problem</strong>:Derive the formula for the volume of a (right-circular) cone whose base has a radius <span class="math inline">\(R\)</span> and whose height is <span class="math inline">\(h\)</span>.</p>
+<ul>
+<li><p>Cross sections are circles</p></li>
+<li><p>Area of a circle: <span class="math inline">\(\pi r^2\)</span></p></li>
+<li><p>Radius of circle at height <span class="math inline">\(x\)</span>?</p></li>
+</ul>
+<p>Notice the similar triangles:</p>
+<p><img src="coneview.png" alt="image" /></p>
+<p><strong>Solution</strong>:First we see that <span class="math inline">\(r = \frac{Rx}{h}\)</span>, so the area of that slice is <span class="math inline">\(\pi (\frac{Rx}{h})^2\)</span>. Set up the volume integral: <span class="math display">\[\begin{aligned}
+    V &amp;= \int_0^h \pi (\frac{Rx}{h})^2 dx \\
+    &amp;= \pi \frac{R^2}{h^2} \int_0^h x^2 dx \\
+    &amp;= \left. \pi \frac{R^2}{h^2} \frac{x^3}{3} \right|_0^h \\
+    &amp;= \pi \frac{R^2}{h^2} \frac{h^3}{3} \\
+     &amp;= \frac{1}{3} \pi R^2 h\end{aligned}\]</span> As expected!</p>
 </body>
 </html>
