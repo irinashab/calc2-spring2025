@@ -118,6 +118,73 @@ li {
     <h1>Volume of Solid of Revolution</h1>
     <p>If a region in a plane is revolved around a line in that plane, the resulting solid is called a <strong>solid of revolution</strong>.</p>
     <p><iframe width="560" height="315" src="https://www.youtube.com/embed/i4L5XoUBD_Q?si=0mrBtfEn3f7InEJv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/i4L5XoUBD_Q?si=0mrBtfEn3f7InEJv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <h2 id="notice">Notice</h2>
+<p>When we revolve an entire region bounded by a curve <span class="math inline">\(y=f(x)\)</span> around the <span class="math inline">\(x\)</span>-axis:</p>
+<ul>
+<li><p>Cross sections are circles: <span class="math inline">\(A(x)=\pi r^2\)</span>.</p></li>
+<li><p><span class="math inline">\(r = f(x)\)</span>: the radius of each circle is <span class="math inline">\(f(x)\)</span>!</p></li>
+<li><p><span class="math inline">\(V =\displaystyle \int_a^b \pi (f(x))^2 dx\)</span></p></li>
+</ul>
+<p><strong>Example</strong></p>
+<p>Find the volume of the solid formed by revolving the region bounded above by <span class="math inline">\(y=x^2\)</span>, below by the <span class="math inline">\(x\)</span>-axis, between <span class="math inline">\(x=0\)</span> and <span class="math inline">\(x=2\)</span>, around the <span class="math inline">\(x\)</span>-axis.</p>
+<p><img src="rot0.png" alt="image" /></p>
+<p><strong>Solution</strong></p>
+<p><span class="math display">\[\begin{aligned}
+    V &amp;= \int_0^2 \pi (x^2)^2 dx \\
+    &amp;= \pi \int_0^2 x^4 dx \\
+    &amp;= \pi \left.\frac{x^5}{5} \right|_0^2 \\
+    &amp;= \frac{32\pi}{5} \approx 20.1
+    \end{aligned}\]</span></p>
+<h2 id="exercises">Exercises:</h2>
+<ol>
+<li><p>Find the volume of the solid formed by revolving the region bounded by <span class="math inline">\(y=1-x^2\)</span>, <span class="math inline">\(0\leq x\leq1\)</span>, and <span class="math inline">\(x\)</span>-axis around <span class="math inline">\(x\)</span>-axis.</p></li>
+<li><p>Find the volume of solid formed by revolving the region bounded on the left by <span class="math inline">\(x=1\)</span> and above by <span class="math inline">\(y=\frac{1}{x}\)</span> around the <span class="math inline">\(x\)</span>-axis.</p></li>
+</ol>
+<p>Try to sketch the 3D solids that are formed in each case.</p>
+<h2 id="gabriels-horn">Gabriel’s Horn</h2>
+<ul>
+<li><p>"Gabriel’s Horn"-Evangelista Torrichelli (Who is Gabriel?)</p></li>
+<li><p>Finite volume</p></li>
+<li><p>Infinite length?</p></li>
+<li><p>Infinite surface area</p></li>
+<li><p>2D Projection: infinite area</p></li>
+</ul>
+<p><img src="gabrielhorn.png" alt="image" /></p>
+<h2 id="washer-method">Washer Method</h2>
+<p><a href="https://youtu.be/3oAjcLD34kc">Washer Method</a></p>
+<h2 id="cross-sections">Cross Sections</h2>
+<ul>
+<li><p>Cross sections are washers, outer radius<span class="math inline">\(R\)</span>, inner radius <span class="math inline">\(r\)</span></p></li>
+<li><p>Area of a washer: <span class="math inline">\(\pi (R^2 - r^2)\)</span></p></li>
+<li><p><span class="math inline">\(R = f(x)\)</span>, <span class="math inline">\(r=g(x)\)</span></p></li>
+<li><p><span class="math inline">\(V = \int_a^b \pi [(f(x))^2 - (g(x))^2] dx\)</span></p></li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Find the volume of the solid formed by revolving the region bounded by <span class="math inline">\(y=sin(x)\)</span> and <span class="math inline">\(y=cos(x)\)</span> from <span class="math inline">\(x=0\)</span> to <span class="math inline">\(x=/frac{/pi}{4}\)</span> around the <span class="math inline">\(x\)</span>-axis.</p>
+<h2 id="solution">Solution</h2>
+<p><span class="math display">\[\begin{aligned}
+    V &amp;= \int_0^{\pi/4} \pi (\cos^2(x) - \sin^2(x)) dx \\
+    &amp;= \pi \int_0^{\pi/4} \cos(2x) dx \\
+    &amp;= \left. \pi \frac{\sin(2x)}{2} \right|_0^{\pi/4} \\
+    &amp;= \pi \cdot \frac{\sin(\pi/2)}{2} = \frac{\pi}{2}\end{aligned}\]</span></p>
+<h2 id="shells">Shells</h2>
+<ul>
+<li><p>Revolving regions around the y-axis?</p></li>
+<li><p>Which region?</p></li>
+<li><p>A: disk method. Convert to an integral using <span class="math inline">\(y\)</span> and <span class="math inline">\(dy\)</span></p></li>
+<li><p>B? Something else.</p></li>
+</ul>
+<p><a href="https://youtu.be/JrRniVSW9tg">Shell Method</a></p>
+<ul>
+<li><p>Volume of one shell:<span class="math inline">\(2\pi rh\Delta x\)</span> (Why?)</p></li>
+<li><p><span class="math inline">\(r \approx x\)</span></p></li>
+<li><p><span class="math inline">\(h \approx f(x)\)</span></p></li>
+<li><p><span class="math inline">\(V =\displaystyle \int_a^b 2 \pi x f(x) dx\)</span></p></li>
+</ul>
+<h2 id="examples">Examples</h2>
+<ol>
+<li><p>Find the volume of the solid formed by revolving the region bounded above by <span class="math inline">\(y=x^2\)</span>, below by the <span class="math inline">\(x\)</span>-axis, to the left by <span class="math inline">\(x=0\)</span> and to the right by <span class="math inline">\(x=1\)</span> around the <span class="math inline">\(y\)</span>-axis. (<em>answer: <span class="math inline">\(\frac{\pi}{2}\)</span></em>)</p></li>
+<li><p>Find the volume of the solid formed by revolving the region bounded above by <span class="math inline">\(y=\sqrt{1-x^2}\)</span>, below by the<span class="math inline">\(x\)</span> -axis, to the left by <span class="math inline">\(x=0\)</span> and to the right by <span class="math inline">\(x=1\)</span> around the <span class="math inline">\(y\)</span> -axis.(<em>answer: <span class="math inline">\(\frac{2\pi}{3}\)</span></em>)</p></li>
+</ol>
 </body>
 </html>
