@@ -141,14 +141,14 @@ li {
 <h1 class="title">Project: Volume of a Solid of Revolution</h1>
 </header>
 <p>The goal of this project is to create a simple solid of revolution and calculate its volume. You can start by drawing your shape on the paper, and then, using a graphing calculator, try to find a function that will approximately describe the designed shape. For graphing purposes you can use Wolfram Alfa <a href="https://www.wolframalpha.com/input/?i=plot">https://www.wolframalpha.com/input/?i=plot</a> or <a href="https://www.desmos.com/calculator">Desmos</a> or, if you have a Mac, Grapher app. For example, to create a bell I started with cubic parabolas. After some experiments I got a curve <span class="math inline">\(y=\frac{1} {8} (x-2)^3 +1\)</span>, <span class="math inline">\(0\leq x\leq 4\)</span>. Here is the graph:</p>
-<p><img src="bellcurve.png" alt="image" /></p>
+<p><img src="assets/images/bellcurve.png" alt="an image of a curve to rotate" /></p>
 <p><br />
 Then I used <a href="https://www.wolframalpha.com/input/?i=rotate+y=.125(x-2)%5E3+1,+0&lt;x&lt;4+about+the+x-axis">Wolfram Alfa</a> to visualize my solid of revolution,and here is my bell!</p>
-<p><img src="bell.png" alt="image" /></p>
+<p><img src="assets/images/bell.png" alt="image of bell-like solid of revolution" /></p>
 <p>The volume of this bell is <span class="math inline">\(V=\pi\displaystyle\int_{0}^{4}\Big(\frac{1} {8} (x-2)^3 +1\Big)^2 dx\)</span>. Squaring the expression inside the integral and doing some simplifications we get <span class="math inline">\(V=\pi\displaystyle\int_{0}^{4}\frac{1}{64}(x-2)^6 dx +\pi\displaystyle\int_{0}^{4}\frac{1}{4}(x-2)^3 dx+\pi\displaystyle\int_{0}^{4}dx\)</span>. Evaluating each integral separately and using <span class="math inline">\(u=x-2\)</span> I got <span class="math inline">\(V=\pi\frac{1}{64}\frac{u^7}{7}\Big|_{-2}^2 + \pi\frac{1}{16}u^4\Big|_{-2}^2+\pi u\Big|_{-2}^2=\frac{32\pi}{7}\)</span>. You can use different curves to create objects like vases (hint: try sin(x) or cos(x))</p>
-<p><img src="vases.png" alt="image" /></p>
+<p><img src="assets/images/vases0.png" alt="image of real and generated vases" /></p>
 <p>or martini glasses</p>
-<p><img src="glasses.png" alt="image" /></p>
+<p><img src="assets/images/glasses0.png" alt="imageof real and generated martini glasses" /></p>
 </body>
 </html>
 
