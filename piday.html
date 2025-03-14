@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus 2: Lesson 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript">
+    MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+       ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle; /* For nested lists */
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0; /* Adds spacing between list items */
+}
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        h3 {
+            margin-bottom: 0; /* Removes bottom margin */
+            padding-bottom: 0; /* Removes bottom padding */
+        }
+    <\style>
+        <style type="text/css">
+      @media (prefers-color-scheme: dark) {
+         html {
+           filter: invert(100%);
+        }
+
+        .youtube-container iframe {
+          filter: invert(100%);
+        }
+
+        .noreverse {
+          filter: invert(100%);
+        }
+      }
+      .desmos-container {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+      }
+
+      .desmos-container iframe {
+        height: 95%;
+        width: 95%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .youtube-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .youtube-container iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    </style>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approximating π</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+        }
+        .formula {
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Approximating π</h1>
+    <p>π is the ratio of the circumference of a circle to its diameter. It is called an <strong>irrational</strong> number because it cannot be written as a fraction and its digits go on forever. This has made it tricky to determine its exact value.</p>
+    
+    <h2>The First Approximation of π</h2>
+    <p>The earliest known approximation of π dates back to ancient civilizations. The Babylonians used the value 3.125, while the Egyptians approximated it as 3.1605 based on geometric calculations. Archimedes refined this further by using a 96-sided polygon to estimate that:</p>
+    <span class="formula">3.1408 < π < 3.1429</span>
+    <p>This was one of the most accurate approximations of π for centuries and laid the foundation for future mathematicians.</p>
+    
+    <h2>Archimedes and the Circle</h2>
+    <p>Archimedes, one of the greatest minds of antiquity, approached the problem of approximating π with remarkable ingenuity.</p>
+    
+    <h2>Inscribed Shapes and Areas</h2>
+    <p>If an inscribed square has sides of length <em>b</em> and the distance from the center of the circle to the midpoint of each side is <em>h</em>, then by considering the square as composed of four triangles, its area can be determined as:</p>
+    <span class="formula">A = 1/2 × P × h</span>
+    <p>where <em>P</em> is the perimeter of the square.</p>
+    
+    <p>By doubling the number of sides, an octagon can be inscribed. The area of the octagon follows the same formula:</p>
+    <span class="formula">A' = 1/2 × P' × h'</span>
+    
+    <p>As this process continues indefinitely, the perimeters of these polygons approach the circumference <em>C</em> of the circle, and their height approximates the radius <em>r</em>. This leads to the famous equation:</p>
+    <span class="formula">A = 1/2 × C × r</span>
+    
+    <h2>The Connection to π</h2>
+    <p>Since the ratio of a circle's circumference to its diameter is constant, we define:</p>
+    <span class="formula">C / D = π</span>
+    <p>or equivalently:</p>
+    <span class="formula">C = π × 2r</span>
+    <p>Substituting this into the previous formula:</p>
+    <span class="formula">A = 1/2 × 2πr × r</span>
+    <p>Simplifying, we arrive at the well-known equation:</p>
+    <span class="formula">A = πr²</span>
+    
+    <h2>Archimedes' Algorithm</h2>
+    <p>Archimedes developed a systematic algorithm to approximate π by increasing the number of sides of an inscribed polygon. If he had enough time, he could have calculated π to far more decimal places than a modern handheld calculator displays.</p>
+    
+    <h2>The Legacy of Archimedes</h2>
+    <p>According to legend, Archimedes met his end when the Roman armies of Marcellus captured Syracuse. While working on a geometric problem, a soldier interrupted him. Archimedes, engrossed in his calculations, asked the soldier to wait. The enraged soldier then killed him, highlighting a stark contrast between Greek intellectualism and Roman militarism.</p>
+    
+    <p>Today, Archimedes' influence remains immortalized in the inscription around his image on the Fields Medal:</p>
+    <blockquote>"Transire suum pectus mundoque potiri" (Rise above oneself and grasp the world).</blockquote>
+</body>
+</html>
+
+</body>
+</html>
