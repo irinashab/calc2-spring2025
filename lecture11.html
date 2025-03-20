@@ -156,6 +156,8 @@ To calculate the length of the arc between the points <span class="math inline">
 <p>If you ever go to Spain, you may see <a href="https://mathstat.slu.edu/escher/index.php/The_Geometry_of_Antoni_Gaudi#Catenary_Arches_and_Catenoids">catenary arches</a> in some of the architecture of the Spanish architect Antoni Gaudi. Catenary arches have the ability to support large amounts of weight while being constructed from relatively light material.<br />
 <strong>As an exercise</strong>, compute the arc length from <span class="math inline">\(x=-1\)</span> to <span class="math inline">\(x=1\)</span> of the catenary curve given by: <span class="math display">\[f(x) = 10 \frac{e^{\frac{x}{10}} + e^{-\frac{x}{10}}}{2}\]</span> Use a calculator (graphing or online) to estimate your answer as well as the answer to the example we did above. You may be surprised to see that as <span class="math inline">\(a\)</span> increases, the arc length of the catenary curve decreases!</p>
     <p><iframe src="https://www.desmos.com/calculator/nubr0rjg4s?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+    <p>One more <strong>Cat</strong>enary</p>
+    <p><img src="assets/images/grin.png" alt="image of Chesire Cat and the graph of his grin" width="500" /></p>
 <h2 id="volumes-wrapping-up">Volumes: wrapping up</h2>
 <h3 id="revolving-around-other-lines">Revolving around other lines</h3>
   
@@ -191,7 +193,30 @@ V = 2\pi \left( \left( \frac{1}{2} - \frac{1}{4} \right) - \left( \frac{0}{2} - 
 \]
      
 </p>
-  
+  <p>We can simplify this problem if we convert from \(y = f(x)\) to  \(x = g(x)\) and use disk method</p>
+    <p>Since we need \( y \) as the independent variable, solve for \( x \) from the equation:
+  \[
+y = x^2 \quad \Rightarrow \quad x = \sqrt{y}
+\]  
+Since we are revolving around the \( y \)-axis, the radius of each disk is just \( x = \sqrt{y} \).<br/>
+        Thus, the volume integral becomes:
+
+\[
+V = \pi \int_0^1 (\sqrt{y})^2 dy
+\]
+Since \( (\sqrt{y})^2 = y \), the integral simplifies to:
+
+\[
+V = \pi \int_0^1 y \, dy
+\]
+
+Computing the integral:
+
+\[
+V = \pi \left[ \frac{y^2}{2} \right]_0^1= \frac{\pi}{2}
+\]
+    
+    </p>
 
        <h2 id="activities">Activities</h2>
 <p>So, we actually have 6 formulas:</p>
