@@ -115,5 +115,106 @@ li {
     </script>
 </head>
 <body>
+<header id="title-block-header">
+<h1 class="title">Differential Equations - What are they?</h1>
+</header>
+<p>A <strong>differential equation</strong> (abbreviated DE) is a challenge. In a so-called ordinary differential equation (abbreviated ODE), the challenger is thinking of a function, <span class="math inline">\(y = f(x)\)</span> and gives us a relationship between an unknown function and its derivatives. To solve the equation means to find the function <span class="math inline">\(f(x)\)</span>. A few examples will help.</p>
+<ul>
+<li><p>Guess the solution of the differential equation <span class="math inline">\(\dfrac{dy}{dx}=\mathrm{e}^{x}\)</span>.</p></li>
+<li><p>Now try <span class="math inline">\(\dfrac{dy}{dx}=\mathrm{e}^{2x}\)</span>.</p></li>
+<li><p>What about <span class="math inline">\(\dfrac{dy}{dx}=x^2\)</span>?</p></li>
+</ul>
+<p><strong>Why do we need differential equations?</strong></p>
+<ul>
+<li><p>Scientific experiments: can be easier to observe changes to data</p></li>
+<li><p>Might not know the actual formula describing your data</p></li>
+<li><p>How a quantity changes may be related to the quantity itself (e. g.the more money you have, the more it earns in interest / investment)</p></li>
+</ul>
+<p>Sometimes it can be easier to find the relationship between the change and the quantity. If so, set up a differential equation.</p>
+<h2 id="example">Example</h2>
+<ul>
+<li><p>Suppose we are growing a bacteria culture.</p></li>
+<li><p>The larger the culture, the bigger the growth of the culture at any given time.</p></li>
+<li><p>Let <span class="math inline">\(m(t)\)</span> be the mass of the culture at time <span class="math inline">\(t\)</span> (Can easily measure the mass.)</p></li>
+<li><p>We notice: at any given <span class="math inline">\(t\)</span> (in seconds?), the culture grows at a rate <span class="math inline">\(.05m(t)\)</span></p></li>
+<li><p>Idea: take lots of measurements, compare mass to previous mass. Look for a pattern.</p></li>
+<li><p>Initial mass: <span class="math inline">\(2\)</span> grams. Mass in <span class="math inline">\(10\)</span> minutes?</p></li>
+</ul>
+<p>We have a <em>differential equation</em>:<span class="math display">\[m^\prime(t) = .05 m(t)\]</span> What functions are proportional to their own derivatives? Exponential functions! Guess <span class="math inline">\(m(t) = Ae^{kt}\)</span>, and use <span class="math inline">\(m^\prime(t)\)</span> and <span class="math inline">\(m(0)\)</span> to find these constants <span class="math inline">\(A\)</span> and <span class="math inline">\(k\)</span>. <strong>Solution</strong> <span class="math display">\[\begin{aligned}
+    m(t) &amp;= Ae^{kt} \\
+    m^\prime(t) &amp;= Ake^{kt} \\
+    &amp;= .05 m(t) \\
+    &amp;= .05 Ae^{kt} \\
+    k &amp;= .05\end{aligned}\]</span> So we have:<span class="math inline">\(m(t) = Ae^{.05t}\)</span>, <span class="math inline">\(m(0)=2\)</span>. Can we find <span class="math inline">\(A\)</span>? Indeed, <span class="math inline">\(Ae^0=2\)</span>, therefore <span class="math inline">\(A=2\)</span>. So the answer is <span class="math inline">\(m(t) = 2e^{.05t}\)</span>, <span class="math inline">\(m(10)=2e^{0.5}\)</span></p>
+<h2 id="overview">Overview</h2>
+<ul>
+<li><p>Any equation involving the <em>derivative</em> of a quantity is known as a <strong>differential equation</strong>.</p></li>
+<li><p>Example <span class="math inline">\(y^\prime = x\)</span></p></li>
+<li><p>A function <span class="math inline">\(y=f(x)\)</span> satisfying that equation is called a <strong>solution</strong> to the differential equation.</p></li>
+<li><p>In general: differential equations do not have unique solutions</p></li>
+<li><p><span class="math inline">\(y = \frac{x^2}{2}\)</span> is a solution to <span class="math inline">\(y^\prime=x\)</span></p></li>
+<li><p><span class="math inline">\(y = \frac{x^2}{2}+1\)</span> is another solution to <span class="math inline">\(y^\prime=x\)</span></p></li>
+</ul>
+<h2 id="order">Order</h2>
+<p>The <strong>order</strong> of a differential equation is the highest derivative that appears in the equation.<br />
+<strong>Exercise</strong>: Identify the orders of the following:</p>
+<ol>
+<li><p><span class="math inline">\(y^\prime = y + x\)</span></p></li>
+<li><p><span class="math inline">\((y^\prime)^2 = (y - x)^2\)</span></p></li>
+<li><p><span class="math inline">\(y^{\prime\prime} = -y\)</span></p></li>
+<li><p><span class="math inline">\(y^{\prime\prime\prime} + (y^\prime)^5 = y\)</span></p></li>
+</ol>
+<h2 id="example-1">Example</h2>
+<p>A ball is thrown straight into the air with an initial velocity of 5 meters per second. It is acted on by a constant, downward force of gravity, causing an acceleration of <span class="math inline">\(-9.8\)</span> <span class="math inline">\(m/s^2\)</span></p>
+<ol>
+<li><p>Find a formula <span class="math inline">\(v(t)\)</span> for the velocity at time <span class="math inline">\(t\)</span> seconds after the ball is thrown.</p></li>
+<li><p>How many seconds after the ball is thrown does it reach its maximum height?</p></li>
+<li><p>If the ball is thrown at a height of 2 meters above the ground, what is the maximum height reached?</p></li>
+</ol>
+<h2 id="solution">Solution</h2>
+<p>Since <span class="math inline">\(v^\prime(t) = a(t)\)</span> , and <span class="math inline">\(a(t)=9.8\)</span>, we know:</p>
+<ul>
+<li><p><span class="math inline">\(v^\prime(t) = -9.8\)</span></p></li>
+<li><p><span class="math inline">\(v^\prime(t) = -9.8\)</span></p></li>
+</ul>
+<p>So, <span class="math inline">\(v(t) = -9.8t + C\)</span>. Since <span class="math inline">\(v(0)=5\)</span>, we can compute <span class="math inline">\(5 = -9.8(0) + C\)</span>, so <span class="math inline">\(C=5\)</span>. Our formula for the velocity is <span class="math inline">\(v(t) = -9.8t + 5\)</span> Going back to Calc I:</p>
+<ul>
+<li><p>the ball reaches its maximum height when its upward velocity is 0</p></li>
+<li><p><span class="math inline">\(v(t) = -9.8t + 5 = 0\)</span></p></li>
+<li><p>Solve for <span class="math inline">\(t\)</span>, <span class="math inline">\(t = \frac{-5}{-9.8} \approx .51\)</span> seconds</p></li>
+<li><p>Derivative of height: velocity.</p></li>
+<li><p><span class="math inline">\(h^\prime(t) = -9.8t + 5\)</span></p></li>
+<li><p>So, <span class="math inline">\(h(t) = -4.9t^2 + 5t + C\)</span></p></li>
+<li><p><span class="math inline">\(h(0)=2\)</span> means <span class="math inline">\(-4.9(0) + 5(0) + C = 2\)</span></p></li>
+<li><p>So <span class="math inline">\(C=2\)</span>.</p></li>
+</ul>
+<p>Therefore <span class="math inline">\(h(t) = -4.9t^2 + 5t + 2\)</span>. Then <span class="math inline">\(h(\frac{5}{9.8}) \approx 3.28\)</span> meters.</p>
+<h2 id="question">Question</h2>
+<p>What order is a differential equation we just solved?</p>
+<h3 id="separable-equations">Separable Equations</h3>
+<p>A differential equation of the form <span class="math inline">\(y^\prime=f(x)g(y)\)</span> is called <strong>separable equation</strong>.We solve it by separating varaibles: <span class="math display">\[\frac{y^\prime}{g(y)} = f(x)\]</span> Then we integrate both sides: the left side with respect to <span class="math inline">\(y\)</span>, and the right side with respect to <span class="math inline">\(x\)</span>: <span class="math display">\[\displaystyle\int \frac{dy}{g(y)} = \int f(x) dx\]</span> Let’s do a simple example: <span class="math inline">\(y^\prime=y\)</span>, <span class="math inline">\(y(0)=1\)</span> We separate variables and set up the integrals:<span class="math display">\[\displaystyle\int \frac{dy}{t} = \int  dx\]</span> We end up with:<span class="math display">\[\ln(y)=x+C\]</span> Solve this for <span class="math inline">\(y\)</span>. Since the inverse of <span class="math inline">\(\ln(y)=x\)</span> is <span class="math inline">\(y=e^x\)</span>, we have <span class="math display">\[y=e^{x+C}\]</span> Since <span class="math inline">\(e^{x+C}=e^x \cdot e^C\)</span> and <span class="math inline">\(e^C\)</span> is just another constant, we re-write our solution as <span class="math inline">\(Ae^x\)</span>, where <span class="math inline">\(A\)</span> is a constant. Now we plug in our initial conditions: <span class="math inline">\(y(0)=1\)</span> means <span class="math inline">\(Ae^0=1\)</span> or <span class="math inline">\(A=1\)</span>. Our solution is <span class="math inline">\(y=e^x\)</span>.<br />
+<br />
+As a side note: there are many equivalent ways of defining the number <span class="math inline">\(e\)</span>. One way is the classic limit definition using compound interest: <span class="math inline">\(e = \lim\limits_{n \rightarrow \infty} \Big(1 + \frac{1}{n}\Big)^n\)</span>.Another way is to define <span class="math inline">\(e\)</span> using differential equations: here we used our knowledge of <span class="math inline">\(e\)</span> and natural logarithms (log base <span class="math inline">\(e\)</span>) to solve the above differential equation, but you can <em>start</em> with the differential equation <span class="math inline">\(f^\prime(x) = f(x)\)</span> and <span class="math inline">\(f(0)=1\)</span>, and <em>define</em> <span class="math inline">\(e\)</span> to be <span class="math inline">\(f(1)\)</span>.<br />
+<br />
+Each of these definitions can be used as a starting point, and then we can prove, mathematically, that the other properties of hold. That is, for example, we could start with using the differential equations definition, and then we can prove that <span class="math inline">\(f(1)\)</span> is exactly equal to that limit definition.<br />
+<br />
+There are still other definitions of <span class="math inline">\(e\)</span>, <a href="https://openstax.org/books/calculus-volume-2/pages/2-7-integrals-exponential-functions-and-logarithms">your textbook provides one in section 2.7</a>.Why do mathematicians define <span class="math inline">\(e\)</span> in so many ways? Really because mathematicians tried, for a long time, to make mathematics rigorous. They wanted to find the exact axioms and definitions that we can start with, so that, making those assumptions, we can prove everything else there is to know about mathematics. Calculus was especially tricky to make rigorous; the history of mathematics often involves terms (like limits and continuity) being redefined to try to make the intuitive results actually provable.</p>
+<h3 id="example-and-check">Example and check</h3>
+<p>This is another example of a separable differential equation: <span class="math display">\[\begin{aligned}
+    y^\prime &amp;= \frac{x}{y} \\
+    y(0) &amp;= 2\end{aligned}\]</span> We solve this by separating variables and integrating:<span class="math display">\[\int y dy = \int x dx\]</span> Integrating:<span class="math display">\[\frac{y^2}{2} = \frac{x^2}{2} + C\]</span> Or <span class="math inline">\(y^2 = x^2 + C\)</span>. Taking square roots,we get either <span class="math inline">\(y = \sqrt{x^2 + C}\)</span> or <span class="math inline">\(-y = \sqrt{x^2 + C}\)</span>. Since <span class="math inline">\(y(0) = 2 &gt; 0\)</span>, we know that the second option is not possible, so it must be that <span class="math inline">\(y = \sqrt{x^2 + C}\)</span>. Now we plug in our initial condition: <span class="math inline">\(y(0)=2\)</span> means that <span class="math inline">\(\sqrt{C} = 2\)</span>. herefore <span class="math inline">\(C=4\)</span>, and so the solution to the original equation is <span class="math inline">\(y = \sqrt{x^2 + 4}\)</span>.<br />
+We can check that this solution works by plugging it back into the original differential equation (sanity check!). First, it’s clear that this solution satisfies the initial condition, <span class="math inline">\(y(0)=2\)</span>. Next, we show that it satisfies <span class="math inline">\(y^\prime = \frac{x}{y}\)</span>.<br />
+Since <span class="math inline">\(y = (x^2 + 4)^{\frac{1}{2}}\)</span>, we take the derivative. Using the power rule and chain rule:<br />
+<span class="math inline">\(y^\prime = \frac{1}{2} (x^2 + 4)^{-\frac{1}{2}} \cdot (2x)\)</span>, or <span class="math inline">\(y^\prime = \frac{x}{\sqrt{x^2+4}}\)</span>. But this is exactly <span class="math inline">\(\frac{x}{y}\)</span>, which is what we wanted to show!</p>
+<h3 id="mass-example-again">Mass Example Again</h3>
+<p><strong>Problem</strong>: A culture of bacteria grows at a rate proportional to its mass. If the culture initially weighs 10g, and in one hour, it weighs 15g, find a formula <span class="math inline">\(m(t)\)</span> for its mass (in grams) <span class="math inline">\(t\)</span> hours after that initial measurement.<br />
+First, we set up a differential equation: <span class="math inline">\(m^\prime(t) = km(t)\)</span>. We don’t know what <span class="math inline">\(k\)</span> is, but we know it must be a constant, since the problem states that <span class="math inline">\(m^\prime\)</span> is proportional to <span class="math inline">\(m\)</span>. Then we have two initial conditions: <span class="math inline">\(m(0) = 10\)</span> and <span class="math inline">\(m(1) = 15\)</span>. We solve the equation by separating variables: <span class="math display">\[\begin{aligned}
+    \int \frac{dm}{m} = \int k dt \\
+    \ln(m) = kt + C \\
+    m = e^{kt + C} = e^{kt} e^C\end{aligned}\]</span> Since <span class="math inline">\(e^C\)</span> is a constant, we can refer to this as another constant <span class="math inline">\(A\)</span>, and our solution is <span class="math inline">\(m(t) = Ae^{kt}\)</span>. Notice that we have two unknown constants here: <span class="math inline">\(k\)</span> and <span class="math inline">\(A\)</span>. We can use the two initial conditions to find it: <span class="math inline">\(m(0) = 10\)</span> means that <span class="math inline">\(Ae^{0} = 10\)</span>. Therefore <span class="math inline">\(A = 10\)</span>, so <span class="math inline">\(m(t) = 10 e^{kt}\)</span>. Also, <span class="math inline">\(m(1) = 15\)</span> means <span class="math inline">\(10e^{k} = 15\)</span> or <span class="math inline">\(e^k = 1.5\)</span>. Therefore <span class="math inline">\(k = \ln(1.5) \approx 0.41\)</span>. The solution, then, is <span class="math inline">\(y = 10 e^{\ln(1.5) t}\)</span>. Using rules for exponents, <span class="math inline">\(e^{\ln(1.5) t} = (e^{\ln(1.5)})^t\)</span>, and since <span class="math inline">\(e^{\ln(x)} = x\)</span>, we can further simplify our solution to <span class="math inline">\(m(t) = 10 \cdot 1.5^t\)</span>.</p>
+<h3 id="textbook-section">Textbook Section</h3>
+<p>Material on separable equations is covered in <a href="https://openstax.org/books/calculus-volume-2/pages/4-3-separable-equations">Section 4.3</a> in the textbook. There are several other worked examples there, I strongly encourage going through those as well as the exercises in that section.</p>
 </body>
+</html>
+
 </html>
