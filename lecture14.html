@@ -115,5 +115,45 @@ li {
     </script>
 </head>
 <body>
+    <h1 class="title">Linear First Order Differential Equations</h1>
+</header>
+<p>A differential equation of the form <span class="math inline">\(a(x)y^\prime + b(x) y = c(x)\)</span> is called a <strong>linear first-order differential equation</strong>. It’s first-order because, as we saw last time, the highest derivative that shows up is <span class="math inline">\(y^\prime\)</span>(first derivative). It’s linear because the powers of <span class="math inline">\(y\)</span> and <span class="math inline">\(y^\prime\)</span> are both 1. The standard form for a linear first order differential equation is <span class="math inline">\(y^\prime + p(x) y = q(x)\)</span>. That is, when the coefficient of <span class="math inline">\(y^\prime\)</span> is just 1.<br />
+To solve a linear first order differential equation, we first notice that if we multiply the expression <span class="math inline">\(y^\prime + p(x) y\)</span> by a function <span class="math inline">\(\mu(x)\)</span>, we end up with the expression <span class="math inline">\(\mu(x) y^\prime + (\mu(x) p(x)) y\)</span>. Moreover, notice that using the product rule for derivatives <span class="math inline">\((\mu(x) y)^\prime = \mu(x) y^\prime + \mu^\prime(x) y\)</span> . That is,<span class="math inline">\(\mu(x) (y^\prime + p(x) y) = (\mu(x) y)^\prime\)</span> if <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>. In other words, if we can solve the differential equation <span class="math inline">\(\mu^\prime = \mu p(x)\)</span>, and then multiply both sides by this factor we can simplify the differential equation to just <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>. We then can solve that by integrating and then solving for <span class="math inline">\(y\)</span>. Note that there is a formula to find <span class="math inline">\(\mu(x)\)</span>, which we will see.<br />
+This is known as the <em>integrating factor method</em>. So the steps to solving a linear first order differential equation are:</p>
+<ol>
+<li><p>Put the equation in standard form <span class="math inline">\(y^\prime + p(x) y = q(x)\)</span>.</p></li>
+<li><p>Find an <em>integrating factor</em>, <span class="math inline">\(\mu(x) = e^{\int p(x) dx}\)</span>. Notice that this solves the differential equation <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>.</p></li>
+<li><p>Multiply both sides by <span class="math inline">\(\mu(x)\)</span> so the equation becomes <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>.</p></li>
+<li><p>Integrate both sides: <span class="math inline">\(\mu(x) y = \int \mu(x) q(x) dx + C\)</span>.</p></li>
+<li><p>Divide by <span class="math inline">\(\mu(x)\)</span>.</p></li>
+</ol>
+<p>Let’s work through the example of <span class="math inline">\(y^\prime + 2y = 1\)</span>, with <span class="math inline">\(y(0)=0\)</span>. Since it’s already in standard form, we start by finding <span class="math inline">\(\mu(x)\)</span>. Since <span class="math inline">\(p(x) = 2\)</span>, the integrating factor is <span class="math inline">\(\mu(x) = e^{\int 2 dx}\)</span>, which is just <span class="math inline">\(e^{2x}\)</span>. Notice that any antiderivative of <span class="math inline">\(p(x)\)</span> will work here.<br />
+Then we multiply both sides by <span class="math inline">\(e^{2x}\)</span>: <span class="math inline">\((e^{2x} y)^\prime = e^{2x}\)</span>. Integrate and the equation is <span class="math inline">\(e^{2x} y = \frac{1}{2} e^{2x} + C\)</span>. We can solve this now: <span class="math inline">\(y = \frac{\frac{1}{2} e^{2x} + C}{2e^{2x}} = \frac{1}{2} + \frac{C}{e^{2x}}\)</span> or <span class="math inline">\(y = \frac{1}{2} + Ce^{-2x}\)</span>. Now we can use <span class="math inline">\(y(0)=0\)</span> to find the solution: <span class="math inline">\(y(0)=0\)</span> means that <span class="math inline">\(\frac{1}{2} + C = 0\)</span> or <span class="math inline">\(C =-\frac{1}{2}\)</span>. Therefore our final answer is <span class="math inline">\(y = \frac{1}{2} - \frac{1}{2} e^{-2x}\)</span>.</p>
+<h2 id="physics">Physics</h2>
+<p>Physics application: air resistance.</p>
+<ul>
+<li><p>A falling object experiences two forces:</p>
+<ul>
+<li><p>Acceleration due to gravity: <span class="math inline">\(F_g = mg = 9.8m\)</span> (assume downward is positive)</p></li>
+<li><p>Air resistance (assume proportional to velocity): <span class="math inline">\(F_A = -kv\)</span> (opposite direction)</p></li>
+</ul></li>
+<li><p>Sum of forces = mass<span class="math inline">\(\cdot\)</span> acceleration <span class="math inline">\(=  m \frac{dv}{dt}\)</span> (Second Newton’s Law)</p></li>
+</ul>
+<p><img src="assets/images/ball.jpeg" alt="image of a falling ball " /></p>
+<p>From Section 4.5 of the textbook. We get a differential equation!<br />
+<span class="math inline">\(m\frac{dv}{dt} = 9.8m - kv\)</span>.<br />
+<br />
+<strong>Exercise</strong>: A penny with weight 0.0025 kg is dropped from the top of the Empire State Building (369m). The force of air resistance on the penny is assumed to be about <span class="math inline">\(-.0025v\)</span>. Set up and solve a differential equation to find the formula for the velocity <span class="math inline">\(v(t)\)</span> of the penny at time <span class="math inline">\(t\)</span>.</p>
+<ul>
+<li><p>Set up the differential equation: <span class="math inline">\(0.0025 v^\prime = 9.8(0.0025) - 0.0025v\)</span></p></li>
+<li><p>Simplify: <span class="math inline">\(v^\prime = 9.8 - v\)</span></p></li>
+<li><p>Standard form: <span class="math inline">\(v^\prime + v = 9.8\)</span> (linear first order equation!)</p></li>
+<li><p>Initial condition: <span class="math inline">\(v(0)=0\)</span>(dropped at rest)</p></li>
+</ul>
+<p>Solve the equation using the steps listed above. Now that we have <span class="math inline">\(v(t)\)</span>:</p>
+<ul>
+<li><p>What is the terminal velocity of the penny?</p></li>
+<li><p>i.e. as <span class="math inline">\(t \rightarrow \infty\)</span>, what is <span class="math inline">\(v(t)\)</span>?</p></li>
+</ul>
 </body>
 </html>
