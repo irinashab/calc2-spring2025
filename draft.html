@@ -126,7 +126,10 @@ li {
 </div>
 
 <p>To solve such an equation, we use the <em>integrating factor method</em>. This technique transforms the left-hand side into the derivative of a product, which we can then integrate easily.</p>
-
+<p> Notice that if we multiply the expression <span class="math inline">\(y^\prime + p(x) y\)</span> by a function <span class="math inline">\(\mu(x)\)</span>, we end up with the expression <span class="math inline">\(\mu(x) y^\prime + (\mu(x) p(x)) y\)</span>.
+    Moreover, notice that using the product rule for derivatives <span class="math inline">\((\mu(x) y)^\prime = \mu(x) y^\prime + \mu^\prime(x) y\)</span> . That is,<span class="math inline">\(\mu(x) (y^\prime + p(x) y) = (\mu(x) y)^\prime\)</span> if <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>. 
+    In other words, if we can solve the differential equation <span class="math inline">\(\mu^\prime = \mu p(x)\)</span>, and then multiply both sides by this factor we can simplify the differential equation to just <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>.
+    We then can solve that by integrating and then solving for <span class="math inline">\(y\)</span>. <br /></p>
 <h2>Steps for Solving</h2>
 <ol>
   <li>Write the equation in standard form: <span class="math inline">\(y' + p(x)y = q(x)\)</span>.</li>
