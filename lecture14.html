@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculus 2: Lesson 1</title>
+    <title>Calculus 2: Lesson 14</title>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="stylesheet" href="assets/style.css">
     <script type="text/javascript">
@@ -116,20 +116,53 @@ li {
 </head>
 <body>
     <h1 class="title">Linear First Order Differential Equations</h1>
-</header>
-<p>A differential equation of the form <span class="math inline">\(a(x)y^\prime + b(x) y = c(x)\)</span> is called a <strong>linear first-order differential equation</strong>. It’s first-order because, as we saw last time, the highest derivative that shows up is <span class="math inline">\(y^\prime\)</span>(first derivative). It’s linear because the powers of <span class="math inline">\(y\)</span> and <span class="math inline">\(y^\prime\)</span> are both 1. The standard form for a linear first order differential equation is <span class="math inline">\(y^\prime + p(x) y = q(x)\)</span>. That is, when the coefficient of <span class="math inline">\(y^\prime\)</span> is just 1.<br />
-To solve a linear first order differential equation, we first notice that if we multiply the expression <span class="math inline">\(y^\prime + p(x) y\)</span> by a function <span class="math inline">\(\mu(x)\)</span>, we end up with the expression <span class="math inline">\(\mu(x) y^\prime + (\mu(x) p(x)) y\)</span>. Moreover, notice that using the product rule for derivatives <span class="math inline">\((\mu(x) y)^\prime = \mu(x) y^\prime + \mu^\prime(x) y\)</span> . That is,<span class="math inline">\(\mu(x) (y^\prime + p(x) y) = (\mu(x) y)^\prime\)</span> if <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>. In other words, if we can solve the differential equation <span class="math inline">\(\mu^\prime = \mu p(x)\)</span>, and then multiply both sides by this factor we can simplify the differential equation to just <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>. We then can solve that by integrating and then solving for <span class="math inline">\(y\)</span>. Note that there is a formula to find <span class="math inline">\(\mu(x)\)</span>, which we will see.<br />
-This is known as the <em>integrating factor method</em>. So the steps to solving a linear first order differential equation are:</p>
+<p>A differential equation of the form <span class="math inline">\(a(x)y' + b(x)y = c(x)\)</span> is called a <strong>linear first-order differential equation</strong>. It’s called <em>first-order</em> because the highest derivative involved is <span class="math inline">\(y'\)</span>. It’s called <em>linear</em> because the powers of <span class="math inline">\(y\)</span> and <span class="math inline">\(y'\)</span> are both 1.</p>
+
+<p>The standard form is:</p>
+<div class="boxed-formula">
+  <span class="math inline">\(y' + p(x)y = q(x)\)</span>
+</div>
+
+<p>To solve such an equation, we use the <em>integrating factor method</em>. This technique transforms the left-hand side into the derivative of a product, which we can then integrate easily.</p>
+<p> Notice that if we multiply the expression <span class="math inline">\(y^\prime + p(x) y\)</span> by an unknown function <span class="math inline">\(\mu(x)\)</span>, we end up with the expression <span class="math inline">\(\mu(x) y^\prime + (\mu(x) p(x)) y\)</span>.
+    Moreover, notice that the product rule for derivatives gives us \[(\mu(x) y)^\prime = \mu(x) y^\prime + \mu^\prime(x) y\]. That is, <span class="math inline">\(\mu(x) (y^\prime + p(x) y) = (\mu(x) y)^\prime\)</span> if <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>. 
+    In other words, if we can solve the differential equation <span class="math inline">\(\mu^\prime = \mu p(x)\)</span>, and then multiply both sides by this factor we can simplify the differential equation to just <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>.
+    We then can solve that by integrating and then solving for <span class="math inline">\(y\)</span>. <br /></p>
+    <p>Note that we know how to find the function  to find the function <span class="math inline">\(\mu(x)\)</span> - we have to solve a separable differential equation <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>. Remember, we know <span class="math inline">\(p(x)\(</span> because it appears in the differential equation 
+        we are solving <br /></p>
+    <p>
+    Separating variables and integrating yields 
+\begin{align}
+\frac{\mu^\prime}{\mu}=p(x)\\
+\int \frac{\mu^\prime}{\mu}dx =\int p(x)dx \\
+\ln\mu(x)= \int p(x)dx\\
+\mu(x)=e^{\int p(x)dx}
+\end{align}
+  </p>
+    
+<h2>Steps for Solving</h2>
 <ol>
-<li><p>Put the equation in standard form <span class="math inline">\(y^\prime + p(x) y = q(x)\)</span>.</p></li>
-<li><p>Find an <em>integrating factor</em>, <span class="math inline">\(\mu(x) = e^{\int p(x) dx}\)</span>. Notice that this solves the differential equation <span class="math inline">\(\mu^\prime(x) = \mu(x) p(x)\)</span>.</p></li>
-<li><p>Multiply both sides by <span class="math inline">\(\mu(x)\)</span> so the equation becomes <span class="math inline">\((\mu(x) y)^\prime = \mu(x) q(x)\)</span>.</p></li>
-<li><p>Integrate both sides: <span class="math inline">\(\mu(x) y = \int \mu(x) q(x) dx + C\)</span>.</p></li>
-<li><p>Divide by <span class="math inline">\(\mu(x)\)</span>.</p></li>
+  <li>Write the equation in standard form: <span class="math inline">\(y' + p(x)y = q(x)\)</span>.</li>
+  <li>Find the integrating factor: <span class="math inline">\(\mu(x) = e^{\int p(x)\,dx}\)</span>.</li>
+  <li>Multiply both sides of the equation by <span class="math inline">\(\mu(x)\)</span>.</li>
+  <li>Recognize the left-hand side as the derivative of a product: <span class="math inline">\((\mu(x)y)' = \mu(x)q(x)\)</span>.</li>
+  <li>Integrate both sides and solve for <span class="math inline">\(y\)</span>.</li>
 </ol>
-<p>Let’s work through the example of <span class="math inline">\(y^\prime + 2y = 1\)</span>, with <span class="math inline">\(y(0)=0\)</span>. Since it’s already in standard form, we start by finding <span class="math inline">\(\mu(x)\)</span>. Since <span class="math inline">\(p(x) = 2\)</span>, the integrating factor is <span class="math inline">\(\mu(x) = e^{\int 2 dx}\)</span>, which is just <span class="math inline">\(e^{2x}\)</span>. Notice that any antiderivative of <span class="math inline">\(p(x)\)</span> will work here.<br />
-Then we multiply both sides by <span class="math inline">\(e^{2x}\)</span>: <span class="math inline">\((e^{2x} y)^\prime = e^{2x}\)</span>. Integrate and the equation is <span class="math inline">\(e^{2x} y = \frac{1}{2} e^{2x} + C\)</span>. We can solve this now: <span class="math inline">\(y = \frac{\frac{1}{2} e^{2x} + C}{2e^{2x}} = \frac{1}{2} + \frac{C}{e^{2x}}\)</span> or <span class="math inline">\(y = \frac{1}{2} + Ce^{-2x}\)</span>. Now we can use <span class="math inline">\(y(0)=0\)</span> to find the solution: <span class="math inline">\(y(0)=0\)</span> means that <span class="math inline">\(\frac{1}{2} + C = 0\)</span> or <span class="math inline">\(C =-\frac{1}{2}\)</span>. Therefore our final answer is <span class="math inline">\(y = \frac{1}{2} - \frac{1}{2} e^{-2x}\)</span>.</p>
-<h2 id="physics">Physics</h2>
+
+<h2>Example 1:</h2>
+    <p>Solve <span class="math inline">\(y' + 2y = 1\)</span> with <span class="math inline">\(y(0) = 0\)</span></p>
+<p>This equation is already in standard form. Here, <span class="math inline">\(p(x) = 2\)</span>, so:</p>
+<p><span class="math inline">\(\mu(x) = e^{\int 2\,dx} = e^{2x}\)</span></p>
+<p>Multiply both sides by <span class="math inline">\(e^{2x}\)</span>:</p>
+<p><span class="math inline">\((e^{2x} y)' = e^{2x}\)</span></p>
+<p>Integrate both sides:</p>
+<p><span class="math inline">\(e^{2x} y = \frac{1}{2} e^{2x} + C\)</span></p>
+<p>Solve for <span class="math inline">\(y\)</span>:</p>
+<p><span class="math inline">\(y = \frac{1}{2} + Ce^{-2x}\)</span></p>
+<p>Use the initial condition <span class="math inline">\(y(0) = 0\)</span>:</p>
+<p><span class="math inline">\(0 = \frac{1}{2} + C \Rightarrow C = -\frac{1}{2}\)</span></p>
+<p><strong>Final solution:</strong> <span class="math inline">\(y = \frac{1}{2} - \frac{1}{2}e^{-2x}\)</span></p>
+
 <p>Physics application: air resistance.</p>
 <ul>
 <li><p>A falling object experiences two forces:</p>
