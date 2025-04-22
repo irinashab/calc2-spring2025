@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus 2: Lesson 16</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript">
+    MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+       ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle; /* For nested lists */
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0; /* Adds spacing between list items */
+}
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        h3 {
+            margin-bottom: 0; /* Removes bottom margin */
+            padding-bottom: 0; /* Removes bottom padding */
+        }
+    <\style>
+        <style type="text/css">
+      @media (prefers-color-scheme: dark) {
+         html {
+           filter: invert(100%);
+        }
+
+        .youtube-container iframe {
+          filter: invert(100%);
+        }
+
+        .noreverse {
+          filter: invert(100%);
+        }
+      }
+      .desmos-container {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+      }
+
+      .desmos-container iframe {
+        height: 95%;
+        width: 95%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .youtube-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .youtube-container iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    </style>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+  <body>
+<header id="title-block-header">
+<h1 class="title">Infinite Series</h1>
+</header>
+<h2 id="achilles-and-the-tortoise">Achilles and the Tortoise</h2>
+<p><img src="turt0.jpeg" alt="image" /></p>
+<p><a href="https://en.wikipedia.org/wiki/Zeno_of_Elea">Zeno of Elea</a> was a Greek philosopher famous for his “Paradoxes of Motion”. He posed several of these paradoxes, but I wanted to discuss the paradox of <a href="https://plato.stanford.edu/entries/paradox-zeno/#AchTor">Achilles and the Tortoise</a>:<br />
+<br />
+“The [second] argument was called “Achilles,” accordingly, from the fact that Achilles was taken [as a character] in it, and the argument says that it is impossible for him to overtake the tortoise when pursuing it. For in fact it is necessary that what is to overtake [something], before overtaking [it], first reach the limit from which what is fleeing set forth. In [the time in] which what is pursuing arrives at this, what is fleeing will advance a certain interval, even if it is less than that which what is pursuing advanced …. And in the time again in which what is pursuing will traverse this [interval] which what is fleeing advanced, in this time again what is fleeing will traverse some amount …. And thus in every time in which what is pursuing will traverse the [interval] which what is fleeing, being slower, has already advanced, what is fleeing will also advance some amount.”<br />
+—Simplicius in <em>On Aristotle’s Physics</em><br />
+<br />
+Suppose we have a <span class="math inline">\(100m\)</span> race between Achilles (a hero) who can run fast, and a Tortoise (a very slow animal). For the sake of argument, suppose Achilles can run at a speed of <span class="math inline">\(5 m/s\)</span>, while the Tortoise can run at a speed of <span class="math inline">\(.5m/s\)</span>. To make the race fair, we can have the Tortoise have a <span class="math inline">\(50m\)</span> head start. Zeno claims that Achilles will never catch up to the Tortoise!</p>
+<ul>
+<li><p>First, Achilles will need to run the <span class="math inline">\(50m\)</span> it was behind the Tortoise.</p></li>
+<li><p>In that time, the Tortoise will have moved some amount <span class="math inline">\(x_1\)</span></p></li>
+<li><p>Then Achilles needs to run <span class="math inline">\(x_1\)</span> meters to catch up to where the Tortoise was.</p></li>
+<li><p>In that time, the Tortoise will have moved some amount <span class="math inline">\(x_2\)</span></p></li>
+<li><p>Keep going: Achilles will <em>never</em> catch up to the Tortoise, because as soon as he catches up to where the Tortoise was, the Tortoise will have moved (albeit a small amount) forward.</p></li>
+</ul>
+<p>Where does this argument go wrong? Let’s do some actual math here, knowing that Achilles runs <span class="math inline">\(5 m/s\)</span>, the Tortoise runs <span class="math inline">\(.5m/s\)</span>, and the Tortoise is initially <span class="math inline">\(50m\)</span> ahead of Achilles:</p>
+<ul>
+<li><p>It takes <span class="math inline">\(10s\)</span> for Achilles to catch up to the Tortoise’s starting position.</p></li>
+<li><p>In that time, the Tortoise moves <span class="math inline">\(5m\)</span></p></li>
+<li><p>It takes <span class="math inline">\(1s\)</span> for Achilles to catch up to this position.</p></li>
+<li><p>In that time, the Tortoise moves <span class="math inline">\(.5m\)</span>.</p></li>
+<li><p>It takes <span class="math inline">\(.1s\)</span> for Achilles to catch up to this position.</p></li>
+<li><p>In that time, the Tortoise moves <span class="math inline">\(.05m\)</span>.</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>In other words, Achilles will catch up to the Tortoise after <span class="math inline">\(10 + 1 + 0.1 + 0.01 + \ldots\)</span> seconds! This is an infinite sum. But it is an actual number: it’s just <span class="math inline">\(11.111\ldots\)</span>. This number can be expressed as a mixed fraction: <span class="math inline">\(11 \frac{1}{9}\)</span>. Certainly after <span class="math inline">\(11.5\)</span> seconds, Achilles will have overtaken the Tortoise!<br />
+<br />
+The key issue in this paradox is that the mathematical tool of being able to add up infinitely many numbers together, and still get a finite amount, was not known to the Ancient Greeks. What does <span class="math inline">\(11.111\ldots\)</span> even mean? What does it mean to add up infinitely many numbers? This is the topic we will explore in today’s lesson.</p>
+<h2 id="infinite-series">Infinite Series</h2>
+<p>How do we define the notion of adding up infinitely many numbers? The sum of infinitely many numbers is called an <strong>infinite series</strong>, and we can make this notion rigorous using limits:<br />
+<br />
+<strong>Definition</strong>: Let <span class="math inline">\((a_n)\)</span> be an infinite sequence. For each <span class="math inline">\(n\)</span>, let <span class="math inline">\(s_n = \sum\limits_{i=0}^{n} a_i\)</span>, the "<span class="math inline">\(n\)</span>-th partial sum". That is: <span class="math inline">\(s_n = a_0 + a_1 + \ldots + a_n\)</span>. Then <span class="math display">\[\sum_{n=0}^{\infty} = \lim_{n \rightarrow \infty} s_n\]</span><br />
+If the limit exists, we say <span class="math inline">\(\sum\limits_{n=0}^{\infty} a_n\)</span> <strong>converges</strong>. Otherwise, it <strong>diverges</strong>.</p>
+<h3 id="geometric-series">Geometric Series</h3>
+<p>A series <span class="math inline">\(\sum\limits_{n=0}^{\infty} a_n\)</span> is called a <strong>geometric series</strong> if the sequence <span class="math inline">\((a_n)\)</span> is a geometric sequence. That is, if <span class="math inline">\(a_n = a \cdot r^n\)</span>, for some constants <span class="math inline">\(a\)</span> and <span class="math inline">\(r\)</span>. For example, the series <span class="math inline">\(10 + 1 + 0.1 + 0.01 + \ldots\)</span> we saw above is a geometric series: <span class="math inline">\(\sum\limits_{n=0}^{\infty} 10 \cdot (\frac{1}{10})^n\)</span>.<br />
+<br />
+Let’s go through a few other examples. FIrst, we consider the geometric series where <span class="math inline">\(a=100\)</span> and <span class="math inline">\(r = \frac{1}{10}\)</span>. This series is <span class="math inline">\(100 + 10 + 0.1 + 0.01 + \ldots\)</span>; we can see that it converges to <span class="math inline">\(111.1111\ldots\)</span><br />
+<br />
+What if <span class="math inline">\(a=1\)</span>, <span class="math inline">\(r=2\)</span>? This series is <span class="math inline">\(1 + 2 + 4 + 8 + \ldots\)</span>. Clearly, this sum goes off to infinity, so it <em>diverges</em>.<br />
+<br />
+What if <span class="math inline">\(a=1\)</span>, <span class="math inline">\(r=1\)</span>? This series is <span class="math inline">\(1 + 1 + 1 + 1 + \ldots\)</span>, which also goes off to infinity.<br />
+<br />
+What if <span class="math inline">\(a=\frac{1}{2}\)</span>, <span class="math inline">\(r=\frac{1}{2}\)</span>? This is the series <span class="math inline">\(\frac{1}{2} + \frac{1}{4} + \ldots\)</span>. Perhaps it’s not obvious if this converges or not, so let’s look at the sequence of partial sums: <span class="math inline">\(\frac{1}{2}, \frac{3}{4}, \frac{7}{8}, \frac{15}{16}, \ldots\)</span>. We can find a closed form for this sequence. Notice that the denominators are powers of 2 (starting at <span class="math inline">\(2^1\)</span>), so the sequence is:<span class="math display">\[s_n = \frac{2^{n+1} - 1}{2^{n+1}} = 1 - \frac{1}{2^{n+1}}\]</span> As <span class="math inline">\(n \rightarrow \infty\)</span>, <span class="math inline">\(s_n \rightarrow 1\)</span>, and so it <em>converges</em>.</p>
+<h3 id="geometric-series-test-formula">Geometric Series Test / Formula</h3>
+<p>We have seen that some geometric series converge and some don’t. Let’s look again at some of the ones that don’t converge:<br />
+<br />
+The series where <span class="math inline">\(a=1\)</span>, <span class="math inline">\(r=1\)</span> does not converge because <span class="math inline">\(1 + 1 + 1 + \ldots\)</span> goes off to infinty.Similarly, if <span class="math inline">\(a=1\)</span>, <span class="math inline">\(r=2\)</span>, the series <span class="math inline">\(1 + 2 + 4 + 8 + \ldots\)</span> also goes off to infinity. Another series which does not converge is when <span class="math inline">\(a=1\)</span>, <span class="math inline">\(r=-1\)</span>: this is the series <span class="math inline">\(1 + (-1) + 1 + (-1) + \ldots\)</span>, which does not actually go off to infinity, but also does not settle down on an actual answer (sometimes the partial sums are 0, and sometimes they’re 1). Similarly, if <span class="math inline">\(a=2\)</span>, <span class="math inline">\(r=-1\)</span>, the series <span class="math inline">\(2 + (-2) + 2 + (-2) + \ldots\)</span> will also diverge.<br />
+<br />
+Hopefully it is clear, then, that the key factor in determining if a geometric series will converge or not is the <strong>common ratio</strong>. If <span class="math inline">\(|r| &lt; 1\)</span>, then the series converges. Otherwise, it will diverge. This simple fact is known as the <strong>Geometric Series Test</strong>.<br />
+<br />
+Moreover, geometric series are nice because if they do converge, we can determine exactly what they converge to. Let’s suppose <span class="math inline">\(a=1\)</span>, and <span class="math inline">\(r=x\)</span>. Then the <span class="math inline">\(n\)</span>-th partial sum is <span class="math inline">\(1 + x + \ldots + x^n\)</span>. It might not be obvious what this will converge to, but a bit of algebra will help. First, multiply <span class="math inline">\(1 + x + \ldots + x^n\)</span> by <span class="math inline">\(\frac{1-x}{1-x}\)</span>. We get: <span class="math display">\[\frac{(1 + x + \ldots + x^n) - (x + x^2 + \ldots + x^{n+1})}{1 - x}\]</span><br />
+Now combine like terms and simplify, and we see: <span class="math display">\[s_n = \frac{1 - x^{n+1}}{1 - x}\]</span><br />
+As <span class="math inline">\(n \rightarrow \infty\)</span> then, since <span class="math inline">\(|x| &lt; 1\)</span>, <span class="math inline">\(s_n \rightarrow \frac{1}{1 - x}\)</span>. In general, for a geometric series <span class="math inline">\(\sum a \cdot r^n\)</span>, if <span class="math inline">\(| r | &lt; 1\)</span>, then the series converges to <span class="math inline">\(\frac{a}{1 - r}\)</span>.</p>
+<h3 id="ldots"><span class="math inline">\(0.999\ldots\)</span></h3>
+<p>As an application, let’s try to understand what is going on with the infinite decimal <span class="math inline">\(0.999\ldots\)</span>. What does this infinite decimal mean? We should think of this in terms of place value: we have one 9 at each place value after the decimal point. That means, the number is the result of adding <span class="math inline">\(0.9 + 0.09 + 0.009 + \ldots\)</span>. This is a geometric series, with <span class="math inline">\(a=0.9\)</span> and <span class="math inline">\(r = \frac{1}{10}\)</span>. Therefore it converges to <span class="math inline">\(\frac{a}{1 - r} = \frac{0.9}{1 - \frac{1}{10}} = 1\)</span>.<br />
+<br />
+This is one reason why <span class="math inline">\(0.999\ldots = 1\)</span>!</p>
+</body>
+</html>
