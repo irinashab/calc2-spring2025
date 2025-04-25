@@ -140,7 +140,7 @@ For example, the series <span class="math inline">\(0 + \frac{1}{2} + \frac{2}{3
 <p>This series diverges! It goes off to infinity quite slowly, but it does, in fact, go off to infinity. How can we tell?</p>
 <h2 id="integral-test">Integral Test</h2>
 <p>One way to tell is by graphing the function <span class="math inline">\(f(x) = \frac{1}{x}\)</span> and drawing in the “Riemann sum” approximations.</p>
-<p><img src="integraltest.png" alt="image" /></p>
+<p><img src="assets/images/integraltest.png" alt="image illustrates the integral test" width="500" /></p>
 <p><br />
 Figure 5.12 from your textbook: the sum of <span class="math inline">\(1+1/2+1/4+...+1/n+...\)</span> is lager than the integral from 1 to infinity of <span class="math inline">\(1/x\)</span>. Notice that the rectangles are all above the graph, and, therefore, we can see: <span class="math display">\[\sum_{n = 1}^{\infty} \frac{1}{n} \geq \int_1^{\infty} \frac{1}{x} dx\]</span> Further, we know how to compute this integral: since the antiderivative of <span class="math inline">\(\frac{1}{x}\)</span> is <span class="math inline">\(\ln(x)\)</span>, this integral can be computed as the limit as <span class="math inline">\(b \rightarrow \infty\)</span> of <span class="math inline">\(\ln(b) - \ln(1)\)</span>, which is <span class="math inline">\(\infty\)</span>. Therefore, the series must also diverge.<br />
 <br />
