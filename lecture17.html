@@ -115,5 +115,50 @@ li {
     </script>
 </head>
 <body>
+    <header id="title-block-header">
+<h1 class="title">More on Infinite Series</h1>
+</header>
+<h2 id="divergence-test">Divergence Test</h2>
+<p>Geometric series are particularly nice, but there are other series as well. Let’s look at the constant series <span class="math inline">\(\sum\limits_{n = 0}^{\infty} \frac{1}{2}\)</span>. It should be clear that it diverges: the partial sums are <span class="math inline">\(\frac{1}{2}, 1, \frac{3}{2}, 2, \frac{5}{2}, ...\)</span> which continue to get bigger and bigger. Similarly, the series <span class="math inline">\(\sum\limits_{n = 0}^{\infty} \frac{1}{1000000}\)</span> also diverges, even if it grows pretty slowly. Moreover there is a nice theorem that generalizes both of these:<br />
+<br />
+<strong>Theorem</strong>: If <span class="math inline">\(\lim\limits_{n \rightarrow \infty} a_n \neq 0\)</span>, then <span class="math inline">\(\sum\limits_{n=0}^{\infty} a_n\)</span> diverges.<br />
+<br />
+That is: if the limit of a sequence either does not exist, or exists but is not 0, then the sum of that sequence diverges. This is known as the <strong>Divergence Test</strong> .<br />
+<br />
+For example, the series <span class="math inline">\(0 + \frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \frac{4}{5} + \ldots\)</span> diverges, since the sequence can be written as <span class="math inline">\(a_n = \frac{n}{n+1}\)</span>. This sequence approaches <span class="math inline">\(1\)</span>, and so the series diverges.<br />
+<br />
+</p>
+<h2 id="converse">Converse?</h2>
+<p>The Divergence Theorem tells you directly which series diverge. But does it tell you anything about which series must converge? Not necessarily. For example, let’s look at the “Harmonic Series” <span class="math inline">\(\sum \frac{1}{n}\)</span><br />
+<br />
+</p>
+<ul>
+<li><p><span class="math inline">\(1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} \geq 2\)</span>, since <span class="math inline">\(\frac{1}{3} + \frac{1}{4} \geq \frac{1}{2}\)</span></p></li>
+<li><p><span class="math inline">\(1 + \frac{1}{2} + \ldots + \frac{1}{8} \geq 2.5\)</span> , since <span class="math inline">\(\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} \geq \frac{1}{2}\)</span></p></li>
+<li><p><span class="math inline">\(1 + \ldots + \frac{1}{16} \geq 3\)</span>, for similar reasons.</p></li>
+</ul>
+<p>This series diverges! It goes off to infinity quite slowly, but it does, in fact, go off to infinity. How can we tell?</p>
+<h2 id="integral-test">Integral Test</h2>
+<p>One way to tell is by graphing the function <span class="math inline">\(f(x) = \frac{1}{x}\)</span> and drawing in the “Riemann sum” approximations.</p>
+<p><img src="integraltest.png" alt="image" /></p>
+<p><br />
+Figure 5.12 from your textbook: the sum of <span class="math inline">\(1+1/2+1/4+...+1/n+...\)</span> is lager than the integral from 1 to infinity of <span class="math inline">\(1/x\)</span>. Notice that the rectangles are all above the graph, and, therefore, we can see: <span class="math display">\[\sum_{n = 1}^{\infty} \frac{1}{n} \geq \int_1^{\infty} \frac{1}{x} dx\]</span> Further, we know how to compute this integral: since the antiderivative of <span class="math inline">\(\frac{1}{x}\)</span> is <span class="math inline">\(\ln(x)\)</span>, this integral can be computed as the limit as <span class="math inline">\(b \rightarrow \infty\)</span> of <span class="math inline">\(\ln(b) - \ln(1)\)</span>, which is <span class="math inline">\(\infty\)</span>. Therefore, the series must also diverge.<br />
+<br />
+Now let’s look at the series <span class="math inline">\(\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}\)</span>. We can similarly compare it to the integral of <span class="math inline">\(f(x) = \frac{1}{x^2}\)</span>. In fact, there are two ways we can compare it:</p>
+<iframe src="https://www.desmos.com/calculator/wc9vzgz5qp?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe><p>and</p>
+<iframe src="https://www.desmos.com/calculator/z1gotag5l5?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+<p>Notice that this means that if <span class="math display">\[\int_1^\infty \frac{1}{x^2} dx\]</span> converges, then so does <span class="math display">\[\sum_{n=1}^{\infty} \frac{1}{n^2}\]</span> and if the integral diverges, then so does the series. And, again, we know how to compute the integral: <span class="math display">\[\begin{aligned}
+    &amp;\lim_{b \rightarrow \infty} \int_1^b \frac{1}{x^2} dx \\
+    &amp;= \lim_{b \rightarrow \infty} (-\frac{1}{b} + 1) \\
+    &amp;= 1
+ \end{aligned}\]</span></p>
+<p>Since the integral converges, the series also converges. This is known as the <strong>Integral Test</strong>:<br />
+suppose <span class="math inline">\((a_n)\)</span> is a sequence of positive terms, and <span class="math inline">\(f(x)\)</span> is a function with the following properties:</p>
+<ul>
+<li><p><span class="math inline">\(f(x)\)</span> is decreasing</p></li>
+<li><p><span class="math inline">\(f(x)\)</span> is continues</p></li>
+<li><p>there is some <span class="math inline">\(N\)</span> such that for all <span class="math inline">\(n\geq N\)</span>, <span class="math inline">\(a_n = f(n)\)</span></p></li>
+</ul>
+<p>Them either <span class="math inline">\(\int_N^{\infty} f(x) dx \textrm{ and } \sum_{n = 1}^{\infty} a_n\)</span> both converge or they both diverge. Note that this does not necessarily mean that they both converge to the same value: we can see that the integral of <span class="math inline">\(\frac{1}{x^2}\)</span> from <span class="math inline">\(1\)</span> to <span class="math inline">\(\infty\)</span> converged to <span class="math inline">\(1\)</span>. But the series actually converges to <span class="math inline">\(\frac{\pi^2}{6}\)</span>: this is known as the <a href="https://en.wikipedia.org/wiki/Basel_problem">Basel problem</a></p>
 </body>
 </html>
