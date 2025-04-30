@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus 2: Lesson 19</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="assets/style.css">
+    <script type="text/javascript">
+    MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+</script>
+<script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+       ul {
+    list-style-type: disc;
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul ul {
+    list-style-type: circle; /* For nested lists */
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0; /* Adds spacing between list items */
+}
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        h3 {
+            margin-bottom: 0; /* Removes bottom margin */
+            padding-bottom: 0; /* Removes bottom padding */
+        }
+    <\style>
+        <style type="text/css">
+      @media (prefers-color-scheme: dark) {
+         html {
+           filter: invert(100%);
+        }
+
+        .youtube-container iframe {
+          filter: invert(100%);
+        }
+
+        .noreverse {
+          filter: invert(100%);
+        }
+      }
+      .desmos-container {
+        overflow: hidden;
+        padding-bottom: 100%;
+        position: relative;
+        height: 0;
+      }
+
+      .desmos-container iframe {
+        height: 95%;
+        width: 95%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      .youtube-container {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+
+      .youtube-container iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    </style>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+  <header id="title-block-header">
+<h1 class="title">Taylor series</h1>
+</header>
+<p>We saw earlier, that the power series for <span class="math inline">\(e^x\)</span> is <span class="math inline">\(1 + x + \frac{x^2}{2} +\frac{x^3}{6} + \ldots\)</span> by starting with the power series, and figuring out that it converged to <span class="math inline">\(e^x\)</span>. But in reality, we’d like to start with a function, and find its power series.<br />
+<br />
+In other words: start with <span class="math inline">\(f(x)=e^x\)</span> Can we find a power series <span class="math inline">\(g(x) = a_0 + a_1 x + a_2 x^2 + \ldots=\sum\limits_{n=0}^{\infty} a_n x^n\)</span> such that <span class="math inline">\(f(x)=g(x)\)</span> for as many <span class="math inline">\(x\)</span> as possible? This brings us back to the idea</p>
+<ul>
+<li><p>What is the best <em>polynomial</em> representation of <span class="math inline">\(f(x)\)</span> near <span class="math inline">\(x=0\)</span>?</p></li>
+<li><p>Degree 1 approximation: <span class="math inline">\(y=f(0)+f^\prime(0)x\)</span></p></li>
+<li><p>Degree <span class="math inline">\(2\)</span>? Higher?</p></li>
+</ul>
+<h2 id="linear-approximation">Linear approximation</h2>
+<p>If we want a linear approximation, like <span class="math inline">\(y = a_0 + a_1 x\)</span>, then we want a function <span class="math inline">\(y\)</span> with:</p>
+<ul>
+<li><p>Want <span class="math inline">\(y(0)=f(0)\)</span> and <span class="math inline">\(y^\prime(0)=f^\prime(0)\)</span></p></li>
+<li><p>Hence: <span class="math inline">\(a_0=f(0)\)</span>, <span class="math inline">\(a_1=f^\prime(0)\)</span></p></li>
+<li><p>So <span class="math inline">\(y = f(0) + f^\prime(0)x\)</span></p></li>
+</ul>
+<p>What if we want higher degrees?</p>
+<ul>
+<li><p><span class="math inline">\(g^\prime(0) = f^\prime(0)\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime}(0) = f^{\prime\prime}(0)\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime\prime}(0) = f^{\prime\prime\prime}(0)\)</span></p></li>
+<li><p>etc.</p></li>
+</ul>
+<h2 id="example-ex">Example: <span class="math inline">\(e^x\)</span></h2>
+<p>Find a power series representation for <span class="math inline">\(f(x)=e^x\)</span> <span class="math display">\[g(x) = a_0 + a_1 x + a_2 x^2 + \ldots\]</span> Let’s plug in: <span class="math inline">\(g(0) = f(0)\)</span> means that <span class="math inline">\(a_0 = f(0)\)</span>.<br />
+Now take the derivative: <span class="math inline">\(g^\prime(x) = a_1 + 2a_2x + 3a_3 x^2 + \ldots\)</span><br />
+If <span class="math inline">\(g^\prime(0) = f^\prime(0)\)</span> then notice that <span class="math inline">\(g^\prime(0) = a_1\)</span>, so <span class="math inline">\(a_1 = f^\prime(0)\)</span><br />
+<br />
+So far we have</p>
+<ul>
+<li><p><span class="math inline">\(a_0=f(0)\)</span></p></li>
+<li><p><span class="math inline">\(a_1=f^\prime(0)\)</span></p></li>
+</ul>
+<p>(This is what we knew earlier from the “linear approximation”). Since <span class="math inline">\(f(x)=e^x\)</span>, these are easy to see: <span class="math inline">\(a_0=1\)</span> and <span class="math inline">\(a_1=1\)</span>.<br />
+<br />
+If we stop here, we get <span class="math inline">\(g(x) = 1 + x\)</span>, a <em>linear approximation of <span class="math inline">\(f(x)=e^x\)</span></em> .What about higher terms, like <span class="math inline">\(a_2\)</span>?<br />
+<br />
+Again <span class="math inline">\(f^{\prime\prime}(x) = e^x\)</span>, so <span class="math inline">\(f^{\prime\prime}(0) = 1\)</span>. What is <span class="math inline">\(g^{\prime\prime}(x)\)</span>?<br />
+<br />
+</p>
+<ul>
+<li><p><span class="math inline">\(g^{\prime\prime}(x) = 2a_2 + 6a_3x + \ldots\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime}(0) = 2a_2 = 1\)</span></p></li>
+<li><p>So: <span class="math inline">\(a_2 = \frac{1}{2}\)</span></p></li>
+</ul>
+<p>If we stop? <span class="math inline">\(g(x) = 1 + x + \frac{x^2}{2}\)</span>. Degree two approximation. Now for <span class="math inline">\(a_3\)</span>?</p>
+<ul>
+<li><p><span class="math inline">\(g^{\prime\prime\prime}(x) = 6a_3 + \ldots\)</span></p></li>
+<li><p>At <span class="math inline">\(x=0\)</span>, <span class="math inline">\(6a_3=1\)</span>, <span class="math inline">\(a_3=\frac{1}{6}\)</span>.</p></li>
+</ul>
+<p>Now: <span class="math inline">\(g(x) = 1 + x + \frac{x^2}{2} + \frac{x^3}{6}\)</span><br />
+<br />
+<strong>Question:</strong> What’s the pattern?<br />
+<span class="math display">\[g(x) = \sum_{n=0}^{\infty} a_n x^n\]</span></p>
+<ul>
+<li><p><span class="math inline">\(g^\prime(x) = \sum_{n=1}^{\infty} n \cdot a_n x^{n - 1}\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime}(x) = \sum_{n=2}^{\infty} (n \cdot (n - 1) \cdot a_n) x^{n - 2}\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime\prime}(x) = \sum_{n=3}^{\infty} (n \cdot (n - 1) \cdot (n - 2) \cdot a_n) x^{n - 3}\)</span></p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>Now plug in <span class="math inline">\(x=0\)</span> to each of these. Only term that remains is the <span class="math inline">\(x^0\)</span> term:</p>
+<ul>
+<li><p><span class="math inline">\(g^{\prime}(0) = a_1\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime}(0) = 2a_2\)</span></p></li>
+<li><p><span class="math inline">\(g^{\prime\prime\prime}(0) = 6a_3\)</span></p></li>
+</ul>
+<h2 id="taylor-series">Taylor Series</h2>
+<p>In general, if <span class="math inline">\(f(0)\)</span>, <span class="math inline">\(f^\prime(0)\)</span>, <span class="math inline">\(f^\prime,\prime(0)\)</span> , etc. all exist, we can form the <strong>Taylor series</strong> centered at <span class="math inline">\(x=0\)</span> by letting:</p>
+<ul>
+<li><p><span class="math inline">\(a_0 = f(0)\)</span></p></li>
+<li><p><span class="math inline">\(a_1 = f^\prime(0)\)</span></p></li>
+<li><p><span class="math inline">\(a_2 = \frac{f^{\prime\prime}(0)}{2}\)</span></p></li>
+<li><p><span class="math inline">\(a_3 = \frac{f^{\prime\prime\prime}(0)}{6}\)</span></p></li>
+<li><p><span class="math inline">\(a_4 = \frac{f^{(4)}(0)}{24}\)</span> (fourth derivative)</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>So the Taylor series for <span class="math inline">\(f(x)\)</span> centered at <span class="math inline">\(x=0\)</span> is: <span class="math display">\[\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n\]</span> (We can then try to find a closed form for these terms, and ask where it converges, etc.)</p>
+<h3 id="exercise">Exercise</h3>
+<p>Find a Taylor series representation for <span class="math inline">\(f(x)=\cos(x)\)</span><br />
+<br />
+Hints:</p>
+<ul>
+<li><p>First find <span class="math inline">\(f^\prime(x)\)</span>, <span class="math inline">\(f^{\prime\prime}(x)\)</span>, etc. There is a pattern.</p></li>
+<li><p>Plug in <span class="math inline">\(x=0\)</span> to each of these to find <span class="math inline">\(a_0, a_1, a_2,\ldots\)</span></p></li>
+<li><p>Write it out as <span class="math inline">\(\sum a_n x^n\)</span></p></li>
+<li><p>See if you can find a closed form expression.</p></li>
+</ul>
+<h3 id="solution">Solution</h3>
+<ul>
+<li><p>Derivatives: <span class="math inline">\(\cos(x), -\sin(x), -\cos(x), \sin(x)\)</span>, repeats for ever</p></li>
+<li><p>Plug in <span class="math inline">\(x=0\)</span>: <span class="math inline">\(1, 0, -1, 0, \ldots\)</span></p></li>
+<li><p>Odd terms disappear!</p></li>
+<li><p>So: <span class="math inline">\(1 - \frac{x^2}{2} + \frac{x^4}{4!} - \ldots\)</span></p></li>
+<li><p>Closed form for <span class="math inline">\(1, \frac{-1}{2!}, \frac{1}{4!}, \frac{-1}{6!}, \ldots\)</span>???</p></li>
+</ul>
+<h3 id="closed-form">Closed form</h3>
+<ul>
+<li><p>Alternating reciprocals of even factorials.</p></li>
+<li><p><span class="math inline">\(\frac{(-1)^n}{(2n)!}\)</span></p></li>
+</ul>
+<p>So our closed form is:<span class="math display">\[g(x) = \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!} x^{2n}\]</span> (Notice that the power of <span class="math inline">\(x\)</span> matches the factorial. Only even powers show up here.) Look at what happens on the graph:</p>
+<p><iframe src="https://www.desmos.com/calculator/llinhwswtk?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe></p>
+<h3 id="radius-of-convergence">Radius of Convergence</h3>
+<p>Ratio test:</p>
+<ul>
+<li><p><span class="math inline">\(a_{n+1} = \frac{(-1)^{n+1}}{2(n+1)!} x^{2(n+1)}\)</span></p></li>
+<li><p><span class="math inline">\(a_{n} = \frac{(-1)^{n}}{2n)!} x^{2n)}\)</span></p></li>
+<li><p>Divide: <span class="math inline">\(\frac{-x^2}{(2n+2)(2n+1)}\)</span></p></li>
+<li><p>Absolute values and limits: as <span class="math inline">\(n \rightarrow \infty\)</span>, the ratio approaches 0</p></li>
+<li><p>Absolutely convergent.</p></li>
+</ul>
+<h3 id="derivative">Derivative?</h3>
+<p><span class="math display">\[f(x) = 1 - \frac{x^2}{2} + \frac{x^4}{4!} - \frac{x^6}{6!} + \ldots\]</span></p>
+<ul>
+<li><p>Derivative: <span class="math inline">\(f^\prime(x) = -x + \frac{x^3}{3!} - \frac{x^5}{5!} + \ldots\)</span></p></li>
+<li><p>We know: <span class="math inline">\(f^\prime(x) = -\sin(x)\)</span></p></li>
+<li><p>So: what’s the Taylor series for <span class="math inline">\(\sin(x)\)</span> (centered at <span class="math inline">\(x=0\)</span> )?</p></li>
+</ul>
+<h3 id="arctan">Arctan</h3>
+<p>Harder question: find the Taylor series for <span class="math inline">\(\arctan(x)\)</span> centered at <span class="math inline">\(x=0\)</span>. This might not be so easy. But instead, look at the derivative of <span class="math inline">\(\arctan(x)\)</span> : its’ <span class="math inline">\(\frac{1}{1 + x^2}\)</span>.<br />
+<br />
+What’s the Taylor series for that? (Also not that easy. Darn.)<br />
+<br />
+What if we used something we already knew? We know that <span class="math display">\[\frac{1}{1 - x} = 1 + x + x^2 + \ldots\]</span> Can we use that to find a Taylor series for <span class="math inline">\(\frac{1}{1 + x^2}\)</span>?<br />
+<br />
+</p>
+<ul>
+<li><p>Taylor series for <span class="math inline">\(\frac{1}{1-x} = 1 + x + x^2 + \ldots\)</span></p></li>
+<li><p>Taylor series for <span class="math inline">\(\frac{1}{1 - (-(x^2))}\)</span>?</p></li>
+<li><p><span class="math inline">\(1 + (-x^2) + (-x^2)^2 + \ldots\)</span></p></li>
+<li><p>Or: <span class="math inline">\(1 - x^2 + x^4 - x^6 + \ldots\)</span></p></li>
+</ul>
+<p>So now we know the Taylor series for the derivative. Then integrate: <span class="math display">\[\int (1 - x^2 + x^4 - \ldots)dx = C + x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots\]</span> Since <span class="math inline">\(\arctan(0)=0\)</span>, we get <span class="math inline">\(C=0\)</span>. Therefore we have our Taylor series: <span class="math display">\[x - \frac{x^3}{3} + \frac{x^5}{5} - \ldots\]</span> What’s the closed form? <span class="math inline">\(\sum_{n=0}^{\infty} \frac{(-1)^n}{2n+1} x^{2n+1}\)</span> Next: find the <strong>radius of convergence</strong> for this series by using the ratio test: <span class="math display">\[\Big|\frac{(-1)^{n+1} x^{2n+3}}{2n+3} \cdot \frac{2n+1}{(-1)^n x^{2n+1}} \Big|\]</span> This expression simplifies to <span class="math inline">\(x^2 \frac{2n+1}{2n+3}.\)</span></p>
+<ul>
+<li><p>As <span class="math inline">\(n \rightarrow \infty\)</span>, <span class="math inline">\(x^2 \frac{2n+1}{2n+3} \rightarrow x^2\)</span></p></li>
+<li><p>Ratio test: converges if <span class="math inline">\(x^2&lt;1\)</span></p></li>
+<li><p>That means: <span class="math inline">\(-1&lt;x&lt;1\)</span></p></li>
+<li><p>Endpoints? Specifically, <span class="math inline">\(x=1\)</span>?</p></li>
+</ul>
+<p>Does the series converge at <span class="math inline">\(x=1\)</span>? Yes: alternating series test. <span class="math display">\[1 - \frac{1}{3} + \frac{1}{5} - \ldots\]</span> But <span class="math inline">\(\arctan(1) = \frac{\pi}{4}\)</span>! So this gives us a way to compute <span class="math inline">\(\pi\)</span> ! (It converges pretty slowly, so this is not the best approximation. But it does work!)<br />
+<br />
+<strong>Finita la Commedia!</strong></p>
+</body>
+</html>
